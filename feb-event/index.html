@@ -9,11 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 신뢰감을 주는 프리미엄 그린 컬러 팔레트 */
-            --sbh-green: #2D5A27;    /* 메인 포레스트 그린 */
-            --sbh-navy: #1A1A1B;     /* 다크 네이비 (텍스트용) */
-            --sbh-bg: #F4F7F4;       /* 아주 밝은 민트빛 미색 배경 */
-            --sbh-accent: #88B04B;   /* 연한 리프 그린 (포인트용) */
+            --sbh-green: #2D5A27;
+            --sbh-navy: #1A1A1B;
+            --sbh-bg: #F4F7F4;
+            --sbh-accent: #88B04B;
         }
         body {
             font-family: 'Poppins', sans-serif;
@@ -21,14 +20,12 @@
             color: var(--sbh-navy);
             -webkit-tap-highlight-color: transparent;
         }
-        /* 이미지 컨테이너 레이아웃 */
         .image-container {
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        /* 이미지 래퍼: 그린 톤의 부드러운 그림자 적용 */
         .img-wrapper {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -42,20 +39,36 @@
             cursor: pointer;
             border: 1px solid rgba(45, 90, 39, 0.1);
             transition: all 0.3s ease;
+            position: relative;
         }
         .img-wrapper:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(45, 90, 39, 0.15);
             border-color: var(--sbh-green);
         }
-        /* 이미지 설정 */
         .image-container img {
             max-width: 92%;
             max-height: 92%;
             object-fit: contain;
-            transition: transform 0.4s ease;
+            transition: opacity 0.4s ease;
+            opacity: 0; /* 처음에는 숨김 */
+            display: none;
         }
-        /* 에러 메시지 스타일 */
+        
+        /* 로딩 스피너 애니메이션 */
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(45, 90, 39, 0.1);
+            border-left-color: var(--sbh-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            position: absolute;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
         .img-error {
             display: none;
             width: 100%;
@@ -70,9 +83,9 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            position: absolute;
         }
 
-        /* 라이트박스 모달 */
         #photo-modal {
             display: none;
             position: fixed;
@@ -109,7 +122,6 @@
 </head>
 <body class="min-h-screen flex flex-col items-center py-16 px-5">
 
-    <!-- 상단 헤더 섹션 (그린 테마) -->
     <header class="text-center mb-16 max-w-2xl">
         <div class="inline-block px-4 py-1 mb-6 border-2 border-[#2D5A27] text-[#2D5A27] font-bold text-sm tracking-widest rounded-full uppercase">
             Special Event
@@ -120,18 +132,18 @@
         <p class="text-lg text-gray-500 font-medium italic">Seoul Beauty Hub - Giải pháp làm đẹp chuẩn Hàn cho người Việt</p>
     </header>
 
-    <!-- 이미지 그리드 -->
     <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
         <!-- 이미지 1 -->
         <div class="image-container text-center">
             <div class="img-wrapper" onclick="openModal('https://drive.google.com/thumbnail?id=1Dgp-GDjuFjDYwNdD_WEBfStQwQewKycE&sz=w1200')">
+                <div class="loading-spinner"></div>
                 <img src="https://drive.google.com/thumbnail?id=1Dgp-GDjuFjDYwNdD_WEBfStQwQewKycE&sz=w1000" 
                      alt="Dịch vụ 01" 
-                     onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     onload="handleImageLoad(this)"
+                     onerror="handleImageError(this)">
                 <div class="img-error">
                     <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 1</p>
-                    <p class="text-[10px] mt-2">Vui lòng kiểm tra quyền chia sẻ <br>của Google Drive.</p>
+                    <p class="text-[10px] mt-2 text-gray-400">Vui lòng kiểm tra quyền chia sẻ <br>của Google Drive.</p>
                 </div>
             </div>
             <h3 class="mt-6 font-bold text-[#1A1A1B] text-2xl">Dịch vụ 01</h3>
@@ -141,13 +153,14 @@
         <!-- 이미지 2 -->
         <div class="image-container text-center">
             <div class="img-wrapper" onclick="openModal('https://drive.google.com/thumbnail?id=1UM2oJytvbkyoNChGFex6UETwcnK9iRUS&sz=w1200')">
+                <div class="loading-spinner"></div>
                 <img src="https://drive.google.com/thumbnail?id=1UM2oJytvbkyoNChGFex6UETwcnK9iRUS&sz=w1000" 
                      alt="Dịch vụ 02" 
-                     onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     onload="handleImageLoad(this)"
+                     onerror="handleImageError(this)">
                 <div class="img-error">
                     <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 2</p>
-                    <p class="text-[10px] mt-2">Vui lòng kiểm tra quyền chia sẻ <br>của Google Drive.</p>
+                    <p class="text-[10px] mt-2 text-gray-400">Vui lòng kiểm tra quyền chia sẻ <br>của Google Drive.</p>
                 </div>
             </div>
             <h3 class="mt-6 font-bold text-[#1A1A1B] text-2xl">Dịch vụ 02</h3>
@@ -157,13 +170,14 @@
         <!-- 이미지 3 -->
         <div class="image-container text-center">
             <div class="img-wrapper" onclick="openModal('https://drive.google.com/thumbnail?id=1OflcIeHnY5f0MewVEFwYEV-y_KljG0fU&sz=w1200')">
+                <div class="loading-spinner"></div>
                 <img src="https://drive.google.com/thumbnail?id=1OflcIeHnY5f0MewVEFwYEV-y_KljG0fU&sz=w1000" 
                      alt="Dịch vụ 03" 
-                     onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     onload="handleImageLoad(this)"
+                     onerror="handleImageError(this)">
                 <div class="img-error">
                     <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 3</p>
-                    <p class="text-[10px] mt-2">Vui lòng kiểm tra quyền chia sẻ <br>của Google Drive.</p>
+                    <p class="text-[10px] mt-2 text-gray-400">Vui lòng kiểm tra quyền chia sẻ <br>của Google Drive.</p>
                 </div>
             </div>
             <h3 class="mt-6 font-bold text-[#1A1A1B] text-2xl">Dịch vụ 03</h3>
@@ -171,13 +185,11 @@
         </div>
     </main>
 
-    <!-- 확대 모달 -->
     <div id="photo-modal" onclick="closeModal()">
         <span class="close-btn">&times;</span>
         <img id="modal-img" src="" alt="Zoomed Content" onclick="event.stopPropagation()">
     </div>
 
-    <!-- 푸터 섹션 -->
     <footer class="text-center border-t border-gray-200 pt-12 w-full max-w-4xl mt-auto">
         <p class="text-[#2D5A27] font-bold text-2xl tracking-widest mb-2 uppercase">Seoul Beauty Hub</p>
         <p class="text-[#1A1A1B] font-semibold text-lg mb-8">by Dove Clinic</p>
@@ -185,6 +197,27 @@
     </footer>
 
     <script>
+        function handleImageLoad(img) {
+            const wrapper = img.parentElement;
+            const spinner = wrapper.querySelector('.loading-spinner');
+            const error = wrapper.querySelector('.img-error');
+            
+            spinner.style.display = 'none';
+            error.style.display = 'none';
+            img.style.display = 'block';
+            setTimeout(() => { img.style.opacity = '1'; }, 50);
+        }
+
+        function handleImageError(img) {
+            const wrapper = img.parentElement;
+            const spinner = wrapper.querySelector('.loading-spinner');
+            const error = wrapper.querySelector('.img-error');
+            
+            spinner.style.display = 'none';
+            img.style.display = 'none';
+            error.style.display = 'flex';
+        }
+
         function openModal(src) {
             const modal = document.getElementById('photo-modal');
             const modalImg = document.getElementById('modal-img');
@@ -200,9 +233,7 @@
         }
 
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
+            if (event.key === 'Escape') closeModal();
         });
     </script>
 
