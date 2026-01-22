@@ -1,15 +1,52 @@
+📂 블로그형 레파지토리 구조 (최종)
+
+앞으로 계속 포스팅을 올리실 때의 파일 구조는 다음과 같습니다.
+
+/ (레파지토리 루트)
+├── CNAME                <-- 이미 있는 파일 (도메인 설정)
+├── README.md            <-- 이미 있는 파일 (설명서)
+├── index.html           <-- [작업필요] 메인 페이지 (목차) - 아래 코드 사용
+└── feb-event/           <-- [폴더 생성]
+    └── index.html       <-- 2월 특가 이미지 공유 페이지 코드
+
+
+🛠 실전 작업 가이드
+
+1단계: 2월 이벤트 파일 위치 옮기기
+
+깃허브에서 [Add file] > [Create new file] 클릭
+
+파일명에 feb-event/index.html 입력
+
+기존에 작업한 그린 테마 2월 이벤트 코드를 붙여넣고 저장(Commit)
+
+2단계: 메인 목차 페이지 만들기 (이미지 썸네일 포함 버전)
+
+다시 루트(최상위)로 가서 [Add file] > [Create new file] 클릭
+
+파일명에 index.html 입력
+
+아래의 '디자인된 메인 허브 페이지' 코드를 그대로 복사해서 붙여넣고 저장(Commit)
+
+[참고] 메인 허브 페이지 코드:
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seoul Beauty Hub - Danh sách sự kiện</title>
-    <!-- 깨끗한 URL로 수정되었습니다 -->
+    <title>Seoul Beauty Hub - Blog Sự kiện</title>
     <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
     <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap)" rel="stylesheet">
     <style>
         :root { --sbh-green: #2D5A27; --sbh-bg: #F4F7F4; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--sbh-bg); }
+        .event-card { transition: all 0.3s ease; border: 1px solid rgba(45, 90, 39, 0.1); }
+        .event-card:hover { transform: translateY(-5px); border-color: var(--sbh-green); }
+        .thumbnail-container { width: 120px; height: 120px; flex-shrink: 0; }
+        @media (max-width: 640px) {
+            .thumbnail-container { width: 100%; height: 200px; }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center py-16 px-5">
@@ -21,18 +58,43 @@
 
     <main class="max-w-4xl w-full">
         <h2 class="text-xl font-bold mb-8 border-b pb-2 text-[#1A1A1B]">Sự kiện & Khuyến mãi (Events)</h2>
-        <div class="space-y-4">
-            <!-- 2월 이벤트 링크 -->
-            <a href="./feb-event/index.html" class="block bg-white p-6 rounded-2xl shadow-sm border border-transparent hover:border-[#2D5A27] transition-all group">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <span class="text-xs font-bold text-[#2D5A27] uppercase">Tháng 2, 2026</span>
-                        <h3 class="text-xl font-bold mt-1 group-hover:text-[#2D5A27]">Khuyến mãi Đặc biệt Tháng 2</h3>
-                        <p class="text-gray-500 text-sm mt-1">Giải pháp làm đẹp chuẩn Hàn cho người Việt</p>
+        <div class="space-y-6">
+            
+            <!-- 2월 이벤트 카드 -->
+            <a href="./feb-event/index.html" class="event-card block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+                <div class="flex flex-col sm:flex-row">
+                    <!-- 대표 이미지 (썸네일) -->
+                    <div class="thumbnail-container bg-gray-100 overflow-hidden">
+                        <img src="[https://drive.google.com/thumbnail?id=1Dgp-GDjuFjDYwNdD_WEBfStQwQewKycE&sz=w500](https://drive.google.com/thumbnail?id=1Dgp-GDjuFjDYwNdD_WEBfStQwQewKycE&sz=w500)" 
+                             alt="Tháng 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="text-[#2D5A27] text-2xl font-bold">→</div>
+                    <!-- 텍스트 정보 -->
+                    <div class="p-6 flex flex-col justify-center flex-grow">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-[#2D5A27] uppercase tracking-wider">Tháng 2, 2026</span>
+                            <div class="text-[#2D5A27] text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">→</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1A1A1B] group-hover:text-[#2D5A27]">Khuyến mãi Đặc biệt Tháng 2</h3>
+                        <p class="text-gray-500 text-sm mt-1">Giải pháp làm đẹp chuẩn Hàn cho người Việt tại Dove Clinic.</p>
+                    </div>
                 </div>
             </a>
+
+            <!-- 3월 이벤트 (샘플: 나중에 링크와 이미지를 수정하세요) -->
+            <!-- 
+            <a href="./mar-event/index.html" class="event-card block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+                <div class="flex flex-col sm:flex-row">
+                    <div class="thumbnail-container bg-gray-100">
+                        <img src="[https://drive.google.com/thumbnail?id=이미지ID&sz=w500](https://drive.google.com/thumbnail?id=이미지ID&sz=w500)" alt="Tháng 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-center flex-grow">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider text-[#2D5A27]">Tháng 3, 2026</span>
+                        <h3 class="text-xl font-bold text-[#1A1A1B]">Sự kiện Sắc đẹp Tháng 3 (Coming Soon)</h3>
+                    </div>
+                </div>
+            </a> 
+            -->
+
         </div>
     </main>
 
@@ -41,3 +103,16 @@
     </footer>
 </body>
 </html>
+
+
+3단계: 3월 이벤트 포스팅 시
+
+새로운 폴더 mar-event/index.html을 만들어 3월용 코드를 올립니다.
+
+루트의 index.html(메인 페이지)을 열어 위 코드의 2월 이벤트 카드를 복사해 아래에 추가하고, href 주소와 이미지 src 주소만 변경합니다.
+
+💡 팁
+
+대표 이미지 링크: https://drive.google.com/thumbnail?id=구글드라이브ID&sz=w500 형식을 사용하면 구글 드라이브 이미지를 썸네일로 바로 쓸 수 있습니다.
+
+통일성: 모든 포스팅 폴더 이름을 년도-월-제목 (예: 2602-special) 식으로 지으면 정렬이 훨씬 쉬워집니다.
