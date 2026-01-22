@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khuyến mãi Đặc biệt Tháng 2 - Seoul Beauty Hub</title>
+    <!-- Tailwind CSS 및 Google Fonts 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* 신뢰감을 주는 프리미엄 그린 컬러 팔레트 */
+            --sbh-green: #2D5A27;    /* 메인 포레스트 그린 */
+            --sbh-navy: #1A1A1B;     /* 다크 네이비 (텍스트용) */
+            --sbh-bg: #F4F7F4;       /* 아주 밝은 민트빛 미색 배경 */
+            --sbh-accent: #88B04B;   /* 연한 리프 그린 (포인트용) */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--sbh-bg);
+            color: var(--sbh-navy);
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* 이미지 컨테이너 레이아웃 */
+        .image-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* 이미지 래퍼: 그린 톤의 부드러운 그림자 적용 */
+        .img-wrapper {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(45, 90, 39, 0.08);
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1px solid rgba(45, 90, 39, 0.1);
+            transition: all 0.3s ease;
+        }
+        .img-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(45, 90, 39, 0.15);
+            border-color: var(--sbh-green);
+        }
+        /* 이미지 설정 */
+        .image-container img {
+            max-width: 92%;
+            max-height: 92%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+        /* 에러 메시지 스타일 */
+        .img-error {
+            display: none;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background: #fff;
+            border: 2px dashed var(--sbh-green);
+            border-radius: 20px;
+            color: #4A5568;
+            font-size: 14px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
+        /* 라이트박스 모달 */
+        #photo-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 26, 27, 0.95);
+            padding: 20px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        #modal-img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(45, 90, 39, 0.4);
+            cursor: default;
+        }
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            color: white;
+            font-size: 44px;
+            font-weight: 300;
+            cursor: pointer;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-16 px-5">
+
+    <!-- 상단 헤더 섹션 (그린 테마) -->
+    <header class="text-center mb-16 max-w-2xl">
+        <div class="inline-block px-4 py-1 mb-6 border-2 border-[#2D5A27] text-[#2D5A27] font-bold text-sm tracking-widest rounded-full uppercase">
+            Special Event
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold text-[#1A1A1B] mb-6 leading-tight">
+            Khuyến mãi Đặc biệt <br><span class="text-[#2D5A27]">Tháng 2</span>
+        </h1>
+        <p class="text-lg text-gray-500 font-medium italic">Seoul Beauty Hub - Giải pháp làm đẹp chuẩn Hàn cho người Việt</p>
+    </header>
+
+    <!-- 이미지 그리드 -->
+    <main class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+        <!-- 이미지 1 -->
+        <div class="image-container text-center">
+            <div class="img-wrapper" onclick="openModal('https://drive.google.com/thumbnail?id=1Dgp-GDjuFjDYwNdD_WEBfStQwQewKycE&sz=w1200')">
+                <img src="https://drive.google.com/thumbnail?id=1Dgp-GDjuFjDYwNdD_WEBfStQwQewKycE&sz=w1000" 
+                     alt="Dịch vụ 01" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.flex='flex'; this.nextElementSibling.style.display='flex';">
+                <div class="img-error">
+                    <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 1</p>
+                </div>
+            </div>
+            <h3 class="mt-6 font-bold text-[#1A1A1B] text-2xl">Dịch vụ 01</h3>
+            <div class="w-8 h-1 bg-[#2D5A27] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <!-- 이미지 2 -->
+        <div class="image-container text-center">
+            <div class="img-wrapper" onclick="openModal('https://drive.google.com/thumbnail?id=1UM2oJytvbkyoNChGFex6UETwcnK9iRUS&sz=w1200')">
+                <img src="https://drive.google.com/thumbnail?id=1UM2oJytvbkyoNChGFex6UETwcnK9iRUS&sz=w1000" 
+                     alt="Dịch vụ 02" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.flex='flex'; this.nextElementSibling.style.display='flex';">
+                <div class="img-error">
+                    <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 2</p>
+                </div>
+            </div>
+            <h3 class="mt-6 font-bold text-[#1A1A1B] text-2xl">Dịch vụ 02</h3>
+            <div class="w-8 h-1 bg-[#2D5A27] mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <!-- 이미지 3 -->
+        <div class="image-container text-center">
+            <div class="img-wrapper" onclick="openModal('https://drive.google.com/thumbnail?id=1OflcIeHnY5f0MewVEFwYEV-y_KljG0fU&sz=w1200')">
+                <img src="https://drive.google.com/thumbnail?id=1OflcIeHnY5f0MewVEFwYEV-y_KljG0fU&sz=w1000" 
+                     alt="Dịch vụ 03" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.flex='flex'; this.nextElementSibling.style.display='flex';">
+                <div class="img-error">
+                    <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 3</p>
+                </div>
+            </div>
+            <h3 class="mt-6 font-bold text-[#1A1A1B] text-2xl">Dịch vụ 03</h3>
+            <div class="w-8 h-1 bg-[#2D5A27] mx-auto mt-2 rounded-full"></div>
+        </div>
+    </main>
+
+    <!-- 확대 모달 -->
+    <div id="photo-modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img id="modal-img" src="" alt="Zoomed Content" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- 푸터 섹션 -->
+    <footer class="text-center border-t border-gray-200 pt-12 w-full max-w-4xl mt-auto">
+        <p class="text-[#2D5A27] font-bold text-2xl tracking-widest mb-2 uppercase">Seoul Beauty Hub</p>
+        <p class="text-[#1A1A1B] font-semibold text-lg mb-8">by Dove Clinic</p>
+        <p class="text-gray-400 text-[10px]">© 2025 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
+    </footer>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById('photo-modal');
+            const modalImg = document.getElementById('modal-img');
+            modal.style.display = 'flex';
+            modalImg.src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('photo-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
