@@ -107,8 +107,8 @@
             </article>
         </div>
 
-        <!-- 병원 위치 섹션: 딥링크(#location) 지원 -->
-        <section id="location" class="mt-20">
+        <!-- 병원 위치 섹션: 딥링크 지원 및 상단 여백 확보 -->
+        <section id="location" class="mt-20 scroll-mt-20">
             <h2 class="text-2xl font-bold text-[#1A1A1B] mb-8 pb-2 border-b">Vị trí phòng khám</h2>
             <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-50 flex flex-col md:flex-row gap-8">
                 <!-- 정보 영역 -->
@@ -129,7 +129,7 @@
                     </div>
                     
                     <div class="mt-8">
-                        <!-- 스마트 링크 적용: 모바일 앱 연동 및 PC 웹 연동 자동 처리 -->
+                        <!-- 스마트 링크 적용 -->
                         <a href="https://maps.app.goo.gl/kAeFGU3h5mkPtDMW8" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#2D5A27] text-white font-bold rounded-full text-sm hover:bg-[#1f421b] transition-colors">
                             <i class="fa-solid fa-map-location-dot mr-2"></i>
                             Mở Google Maps
@@ -176,6 +176,20 @@
         
         <p class="text-gray-300 text-[10px] uppercase tracking-widest">© 2025 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
     </footer>
+
+    <!-- 해시 링크 작동 안정화를 위한 스크립트 -->
+    <script>
+        window.addEventListener('load', function() {
+            if (window.location.hash === '#location') {
+                const element = document.getElementById('location');
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
