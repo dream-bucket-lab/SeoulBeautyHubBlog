@@ -37,19 +37,19 @@
         @media (max-width: 640px) {
             .thumb-box { width: 100%; height: 220px; }
         }
-        /* SNS 아이콘 스타일 (제공해주신 이미지 파일 사용) */
+        /* SNS 아이콘 스타일 */
         .sns-icon {
             width: 32px;
             height: 32px;
             object-fit: contain;
-            filter: grayscale(100%); /* 기본 상태: 회색 */
-            opacity: 0.5;            /* 부드러운 느낌을 위한 투명도 */
+            filter: grayscale(100%); 
+            opacity: 0.5;            
             transition: all 0.3s ease;
         }
         .sns-link:hover .sns-icon {
-            filter: grayscale(0%);    /* 호버 시: 컬러 복원 */
-            opacity: 1;               /* 호버 시: 선명하게 */
-            transform: scale(1.1);    /* 호버 시: 살짝 확대 */
+            filter: grayscale(0%);    
+            opacity: 1;               
+            transform: scale(1.1);    
         }
     </style>
 </head>
@@ -75,11 +75,11 @@
         <div class="space-y-8">
             <!-- 2월 이벤트 카드 -->
             <article>
-                <a href="./feb-event/index.html" class="event-card block bg-white rounded-3xl overflow-hidden shadow-sm group">
+                <a href="./feb-event/february_event_simple.html" class="event-card block bg-white rounded-3xl overflow-hidden shadow-sm group">
                     <div class="flex flex-col sm:flex-row">
-                        <!-- 썸네일 이미지 (assets 폴더 연결) -->
+                        <!-- 썸네일 이미지: FebEvents 폴더 내의 이미지를 사용하도록 경로 수정 -->
                         <div class="thumb-box bg-gray-50 overflow-hidden">
-                            <img src="./assets/feb-thumb.png" 
+                            <img src="./assets/2_event.png" 
                                  alt="Tháng 2 Event" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                  onerror="this.src='https://via.placeholder.com/600x600?text=Seoul+Beauty+Hub'">
@@ -95,7 +95,7 @@
                                 Khuyến mãi Đặc biệt Tháng 2: Đón Tết Rạng Ngời
                             </h3>
                             <p class="text-gray-400 text-sm mt-3 line-clamp-2 leading-relaxed">
-                                Giải pháp làm đẹp chuẩn Hàn dành riêng cho người Việt tại Hàn Quốc. Hãy để chuyên gia chăm sóc làn da의 bạn.
+                                Giải pháp làm đẹp chuẩn Hàn dành riêng cho người Việt tại Hàn Quốc. Hãy để chuyên gia chăm sóc làn da của bạn.
                             </p>
                             <div class="mt-6 flex items-center text-[#2D5A27] font-bold text-sm">
                                 Xem chi tiết <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
@@ -114,21 +114,18 @@
         <p class="text-[#2D5A27] font-bold text-lg mb-2">Seoul Beauty Hub</p>
         <p class="text-gray-400 text-xs mb-8">Giải pháp làm đẹp chuẩn Hàn cho người Việt</p>
         
-        <!-- SNS 아이콘 리스트 (업로드하신 이미지 파일 경로 사용) -->
+        <!-- SNS 아이콘 리스트 -->
         <div class="flex justify-center items-center gap-10 mb-10">
-            <!-- Facebook: 아래 href="..." 부분에 실제 페이스북 페이지 주소를 넣으세요 -->
             <a href="https://www.facebook.com/profile.php?id=61586287086577" target="_blank" class="sns-link" title="Facebook">
                 <img src="./assets/facebook.png" alt="Facebook" class="sns-icon" 
                      onerror="this.src='https://cdn-icons-png.flaticon.com/512/733/733547.png'">
             </a>
             
-            <!-- Zalo: 아래 href="..." 부분에 실제 잘로 아이디 또는 전화번호 주소를 넣으세요 -->
             <a href="https://zalo.me/84963531040" target="_blank" class="sns-link" title="Zalo">
                 <img src="./assets/zalo.png" alt="Zalo" class="sns-icon" 
                      onerror="this.src='https://cdn-icons-png.flaticon.com/512/1000/1000858.png'">
             </a>
             
-            <!-- Instagram: 아래 href="..." 부분에 실제 인스타그램 주소를 넣으세요 -->
             <a href="https://www.instagram.com/seoul_beautyhub" target="_blank" class="sns-link" title="Instagram">
                 <img src="./assets/instagram.png" alt="Instagram" class="sns-icon" 
                      onerror="this.src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png'">
