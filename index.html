@@ -37,6 +37,20 @@
         @media (max-width: 640px) {
             .thumb-box { width: 100%; height: 220px; }
         }
+        /* SNS 아이콘 스타일 (제공해주신 이미지 파일 사용) */
+        .sns-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            filter: grayscale(100%); /* 기본 상태: 회색 */
+            opacity: 0.5;            /* 부드러운 느낌을 위한 투명도 */
+            transition: all 0.3s ease;
+        }
+        .sns-link:hover .sns-icon {
+            filter: grayscale(0%);    /* 호버 시: 컬러 복원 */
+            opacity: 1;               /* 호버 시: 선명하게 */
+            transform: scale(1.1);    /* 호버 시: 살짝 확대 */
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center py-12 px-6">
@@ -51,7 +65,7 @@
         <div class="w-16 h-[2px] bg-[#2D5A27] mx-auto mt-6"></div>
     </header>
 
-    <!-- 메인 섹션 -->
+    <!-- 메인 콘텐츠 영역 -->
     <main class="max-w-3xl w-full">
         <div class="flex items-center justify-between mb-8">
             <h2 class="text-2xl font-bold text-[#1A1A1B]">Sự kiện & Khuyến mãi</h2>
@@ -59,8 +73,7 @@
         </div>
         
         <div class="space-y-8">
-            
-            <!-- 포스팅: 2월 이벤트 -->
+            <!-- 2월 이벤트 카드 -->
             <article>
                 <a href="./feb-event/index.html" class="event-card block bg-white rounded-3xl overflow-hidden shadow-sm group">
                     <div class="flex flex-col sm:flex-row">
@@ -72,7 +85,7 @@
                                  onerror="this.src='https://via.placeholder.com/600x600?text=Seoul+Beauty+Hub'">
                         </div>
                         
-                        <!-- 포스팅 요약 정보 -->
+                        <!-- 포스팅 정보 -->
                         <div class="p-8 flex flex-col justify-center flex-grow">
                             <div class="flex items-center gap-3 mb-3">
                                 <span class="px-2 py-0.5 bg-[#F4F7F4] text-[#2D5A27] text-[10px] font-bold rounded">HOT</span>
@@ -82,7 +95,7 @@
                                 Khuyến mãi Đặc biệt Tháng 2: Đón Tết Rạng Ngời
                             </h3>
                             <p class="text-gray-400 text-sm mt-3 line-clamp-2 leading-relaxed">
-                                Giải pháp làm đẹp chuẩn Hàn dành riêng cho người Việt. Ưu đãi lên đến 50% cho các dịch vụ nâng cơ, tiêm filler và chăm sóc da chuyên sâu.
+                                Giải pháp làm đẹp chuẩn Hàn dành riêng cho người Việt tại Hàn Quốc. Hãy để chuyên gia chăm sóc làn da của bạn.
                             </p>
                             <div class="mt-6 flex items-center text-[#2D5A27] font-bold text-sm">
                                 Xem chi tiết <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
@@ -91,22 +104,8 @@
                     </div>
                 </a>
             </article>
-
-            <!-- 포스팅 추가 가이드 (나중에 아래 주석을 풀고 사용하세요) -->
-            <!-- 
-            <article>
-                <a href="./mar-event/index.html" class="event-card block bg-white rounded-3xl overflow-hidden shadow-sm group opacity-60">
-                    <div class="flex flex-col sm:flex-row">
-                        <div class="thumb-box bg-gray-200"></div>
-                        <div class="p-8">
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Tháng 3, 2026</span>
-                            <h3 class="text-2xl font-bold text-gray-300 mt-2">Sự kiện Tháng 3 (Coming Soon)</h3>
-                        </div>
-                    </div>
-                </a>
-            </article> 
-            -->
-
+            
+            <!-- (이곳에 3월 이벤트를 추가할 예정입니다) -->
         </div>
     </main>
 
@@ -115,10 +114,25 @@
         <p class="text-[#2D5A27] font-bold text-lg mb-2">Seoul Beauty Hub</p>
         <p class="text-gray-400 text-xs mb-8">Giải pháp làm đẹp chuẩn Hàn cho người Việt</p>
         
-        <div class="flex justify-center gap-6 mb-10">
-            <a href="#" class="text-gray-400 hover:text-[#2D5A27] text-xs">Facebook</a>
-            <a href="#" class="text-gray-400 hover:text-[#2D5A27] text-xs">Zalo</a>
-            <a href="#" class="text-gray-400 hover:text-[#2D5A27] text-xs">Instagram</a>
+        <!-- SNS 아이콘 리스트 (업로드하신 이미지 파일 경로 사용) -->
+        <div class="flex justify-center items-center gap-10 mb-10">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/your-page" target="_blank" class="sns-link" title="Facebook">
+                <img src="./assets/facebook.png" alt="Facebook" class="sns-icon" 
+                     onerror="this.src='https://cdn-icons-png.flaticon.com/512/733/733547.png'">
+            </a>
+            
+            <!-- Zalo -->
+            <a href="https://zalo.me/your-id" target="_blank" class="sns-link" title="Zalo">
+                <img src="./assets/zalo.png" alt="Zalo" class="sns-icon" 
+                     onerror="this.src='https://cdn-icons-png.flaticon.com/512/1000/1000858.png'">
+            </a>
+            
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/your-id" target="_blank" class="sns-link" title="Instagram">
+                <img src="./assets/instagram.png" alt="Instagram" class="sns-icon" 
+                     onerror="this.src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png'">
+            </a>
         </div>
         
         <p class="text-gray-300 text-[10px] uppercase tracking-widest">© 2025 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
