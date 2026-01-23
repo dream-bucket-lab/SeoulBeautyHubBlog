@@ -6,6 +6,7 @@
     <title>Seoul Beauty Hub - Blog Sự kiện & Khuyến mãi</title>
     <!-- Tailwind CSS 및 Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { 
@@ -57,7 +58,7 @@
 
     <!-- 브랜딩 헤더 -->
     <header class="text-center mb-20">
-        <div class="inline-block px-3 py-1 bg-[#2D5A27] text-white text-[10px] font-bold tracking-[0.2em] rounded-sm mb-4">
+        <div class="inline-block px-3 py-1 bg-[#2D5A27] text-white text-[10px] font-bold rounded-sm mb-4">
             KOREAN BEAUTY STANDARD
         </div>
         <h1 class="text-4xl font-bold text-[#1A1A1B] uppercase tracking-tighter mb-2">Seoul Beauty Hub</h1>
@@ -77,7 +78,7 @@
             <article>
                 <a href="./feb-event/index.html" class="event-card block bg-white rounded-3xl overflow-hidden shadow-sm group">
                     <div class="flex flex-col sm:flex-row">
-                        <!-- 썸네일 이미지: 주소를 assets/22.png로 업데이트 -->
+                        <!-- 썸네일 이미지 -->
                         <div class="thumb-box bg-gray-50 overflow-hidden">
                             <img src="./assets/22.png" 
                                  alt="Tháng 2 Event" 
@@ -95,7 +96,7 @@
                                 Khuyến mãi Đặc biệt Tháng 2: Đón Tết Rạng Ngời
                             </h3>
                             <p class="text-gray-400 text-sm mt-3 line-clamp-2 leading-relaxed">
-                                Giải pháp làm đẹp chuẩn Hàn dành riêng cho người Việt tại Hàn Quốc. Hãy để chuyên gia chăm sóc làn da의 bạn.
+                                Giải pháp làm đẹp chuẩn Hàn dành riêng cho người Việt tại Hàn Quốc. Hãy để chuyên gia chăm sóc làn da của bạn.
                             </p>
                             <div class="mt-6 flex items-center text-[#2D5A27] font-bold text-sm">
                                 Xem chi tiết <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
@@ -104,9 +105,50 @@
                     </div>
                 </a>
             </article>
-            
-            <!-- (이곳에 3월 이벤트를 추가할 예정입니다) -->
         </div>
+
+        <!-- 병원 위치 섹션: 딥링크(#location) 지원 -->
+        <section id="location" class="mt-20">
+            <h2 class="text-2xl font-bold text-[#1A1A1B] mb-8 pb-2 border-b">Vị trí phòng khám</h2>
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-50 flex flex-col md:flex-row gap-8">
+                <!-- 정보 영역 -->
+                <div class="flex-grow">
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-[#F4F7F4] rounded-full flex items-center justify-center text-[#2D5A27] flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#1A1A1B]">Địa chỉ (주소)</h4>
+                                <p class="text-gray-500 text-sm mt-1">
+                                    Tầng 7 & 8, Tòa nhà Jeong-an, 174 Dosan-daero, Quận Gangnam, Seoul.<br>
+                                    (서울특별시 강남구 도산대로 174 정안빌딩 7, 8층)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <!-- 스마트 링크 적용: 모바일 앱 연동 및 PC 웹 연동 자동 처리 -->
+                        <a href="https://maps.app.goo.gl/kAeFGU3h5mkPtDMW8" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#2D5A27] text-white font-bold rounded-full text-sm hover:bg-[#1f421b] transition-colors">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i>
+                            Mở Google Maps
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 구글 지도 임베드 -->
+                <div class="w-full md:w-80 h-64 md:h-auto min-h-[250px] bg-gray-100 rounded-2xl overflow-hidden shadow-inner border border-gray-100">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.526021493603!2d127.02504881266141!3d37.51909572672848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3ed13d3485d%3A0x2a1a972c9e23c444!2sDove%20Clinic%20(Dosan)!5e0!3m2!1sko!2skr!4v1769146012872!5m2!1sko!2skr" 
+                        class="w-full h-full border-0" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- 하단 푸터 -->
