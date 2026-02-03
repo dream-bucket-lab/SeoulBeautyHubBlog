@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Optimization: Title includes main keywords -->
+    
+    <!-- SEO Meta Tags: Tối ưu hóa tìm kiếm cho thị trường Việt Nam -->
+    <meta name="description" content="Khám phá phòng khám da liễu Hàn Quốc uy tín tại Seoul & Gangnam. Chuyên điều trị nám tàn nhang, trị mụn tận gốc và tiêm Rejuran Healer chuẩn Hàn cho người Việt.">
+    <meta name="keywords" content="phòng khám da liễu Hàn Quốc, thẩm mỹ viện Hàn Quốc, tiêm Rejuran Healer Gangnam, điều trị nám tàn nhang, skincare chuẩn Hàn, trị mụn tận gốc, Seoul Beauty Hub">
+    <meta name="author" content="Seoul Beauty Hub">
+
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vaw4wd2lxk");
+    </script>
+
+    <!-- Title Optimization -->
     <title>Review Rejuran Gangnam: Hiệu quả, Nốt sần (Embo) & Đau không? - Dove Clinic</title>
     
-    <!-- Meta Description: Critical for CTR in search results -->
-    <meta name="description" content="Tìm hiểu sự thật về nốt sần (Embo) sau khi tiêm Rejuran Gangnam. Tổng hợp chi tiết về hiệu quả Rejuran Healer, mức độ đau và quy trình tiêm chuẩn tại Dove Clinic Seoul.">
-    
-    <!-- Keywords (Optional but good for context) -->
-    <meta name="keywords" content="Rejuran, Rejuran Healer, Skin Booster, Gangnam Skin Clinic, Dove Clinic, Rejuran Review, Tiêm Rejuran, Embo">
-    
-    <!-- Open Graph for Social Sharing (Zalo, Facebook) -->
+    <!-- Open Graph for Social Sharing -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="[Rejuran Gangnam] Nổi sần (Embo) là có hiệu quả thật sự?">
     <meta property="og:description" content="Giải mã bí mật về nốt sần Rejuran và tiêu chí chọn phòng khám chuẩn Gangnam.">
     <meta property="og:image" content="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/rejuran/original.png?raw=true">
     <meta property="og:site_name" content="Dove Clinic Seoul">
 
-    <!-- Schema.org Structured Data (JSON-LD) for Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,21 +37,11 @@
         "https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/rejuran/original.png?raw=true"
       ],
       "datePublished": "2025-12-15T08:00:00+09:00",
-      "dateModified": "2025-12-15T08:00:00+09:00",
       "author": {
         "@type": "MedicalOrganization",
         "name": "Dove Clinic",
         "url": "https://zalo.me/84963531040"
-      },
-      "publisher": {
-        "@type": "MedicalOrganization",
-        "name": "Dove Clinic",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/QR.png?raw=true"
-        }
-      },
-      "description": "Tổng hợp chi tiết về hiệu quả Rejuran Healer, mức độ đau và quy trình tiêm chuẩn tại Dove Clinic Seoul."
+      }
     }
     </script>
 
@@ -53,6 +51,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        :root { 
+            --sbh-green: #2D5A27; 
+        }
         body {
             font-family: 'Pretendard', sans-serif;
             line-height: 1.75;
@@ -63,9 +64,6 @@
             font-family: 'Noto Serif KR', serif;
             letter-spacing: -0.025em;
         }
-        .highlight {
-            box-shadow: inset 0 -10px 0 #ffe4e6;
-        }
         .prose p {
             margin-bottom: 1.5rem;
             word-break: keep-all;
@@ -73,31 +71,84 @@
         .prose img {
             border-radius: 0.75rem;
             margin: 2rem 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        /* Smooth scrolling for the whole page */
-        html {
-            scroll-behavior: smooth;
+        html { scroll-behavior: smooth; }
+
+        /* Navigation Links Style */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 2px;
+            bottom: -4px; left: 0;
+            background-color: var(--sbh-green);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* SEO Content (Hidden from users, visible to bots) */
+        .seo-hidden {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        /* Floating Zalo Button Style */
+        .zalo-floating-wrap {
+            animation: float-up 3s ease-in-out infinite;
+        }
+        @keyframes float-up {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .zalo-btn {
+            background: linear-gradient(135deg, #0068E0 0%, #004699 100%);
+            box-shadow: 0 10px 25px rgba(0, 104, 224, 0.3);
         }
     </style>
 </head>
 <body class="antialiased text-gray-800 relative">
 
+    <!-- SEO Optimized Content -->
+    <div class="seo-hidden">
+        <h2>Phòng khám da liễu tại Gangnam uy tín nhất cho người Việt tại Hàn</h2>
+        <p>Tìm hiểu cách trị mụn tận gốc Hàn Quốc và bảng giá dịch vụ thẩm mỹ viện 2026. Skincare chuẩn Hàn tại Seoul.</p>
+    </div>
+
+    <!-- Navigation Area -->
+    <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 border-b border-gray-100 px-6 py-4">
+        <div class="max-w-3xl mx-auto flex justify-center items-center">
+            <div class="flex gap-10">
+                <a href="https://seoulbeautyhub.com/" class="nav-link text-xs font-bold text-[#1A1A1B] tracking-widest uppercase">Home</a>
+                <a href="https://seoulbeautyhub.com/hospitals" class="nav-link text-xs font-bold text-[#1A1A1B] tracking-widest uppercase">Hospital</a>
+                <a href="https://blog.seoulbeautyhub.com/" class="nav-link text-xs font-bold text-[#2D5A27] tracking-widest uppercase border-b-2 border-[#2D5A27]">Blog</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Main Content -->
-    <main class="max-w-3xl mx-auto px-6 py-12 bg-white mt-6 shadow-sm rounded-xl mb-12">
+    <main class="max-w-3xl mx-auto px-6 py-12 bg-white mt-24 shadow-sm rounded-xl mb-12">
         
-        <!-- Title (태그와 부제 삭제됨) -->
+        <!-- Title -->
         <div class="text-center mb-12">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-4">
                 [Rejuran Gangnam] Nổi sần (Embo) là có hiệu quả thật sự? <br>
                 <span class="text-rose-600">Tổng hợp về hiệu quả, mức độ đau và tiêu chí chọn phòng khám</span>
             </h1>
+            <div class="flex justify-center items-center gap-4 text-sm text-gray-400 mt-6">
+                <span><i class="fa-regular fa-calendar mr-1"></i> 15/12/2025</span>
+                <span><i class="fa-regular fa-user mr-1"></i> Dove Clinic Team</span>
+            </div>
         </div>
 
-        <!-- Image 1: Main Visual -->
+        <!-- Image 1 -->
         <figure class="mb-10">
-            <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/rejuran/original.png?raw=true" onerror="this.src='https://placehold.co/800x450?text=Image+Not+Found'" alt="Người phụ nữ Việt Nam 30 tuổi với làn da sạch và sáng sau khi tiêm Rejuran" class="w-full h-auto object-cover aspect-video">
-            <figcaption class="text-center text-sm text-gray-400 mt-2">Khởi đầu của làn da khỏe mạnh, bắt đầu từ liệu trình Rejuran đúng cách</figcaption>
+            <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/rejuran/original.png?raw=true" onerror="this.src='https://placehold.co/800x450?text=Rejuran+Visual'" alt="Làn da căng bóng sau khi tiêm Rejuran" class="w-full h-auto object-cover rounded-xl">
+            <figcaption class="text-center text-sm text-gray-400 mt-2 italic">Khởi đầu của làn da khỏe mạnh, bắt đầu từ liệu trình Rejuran đúng cách</figcaption>
         </figure>
 
         <div class="prose prose-lg mx-auto">
@@ -111,166 +162,124 @@
                 Hôm nay, chúng tôi sẽ giải thích chi tiết Rejuran chính xác là gì, tại sao kỹ thuật tiêm lại quan trọng, và những nguyên tắc điều trị mà Dove Clinic luôn tuân thủ.
             </p>
 
-            <hr class="border-gray-200 my-10">
+            <hr class="border-gray-100 my-10">
 
             <h2 class="text-2xl font-bold text-gray-900 mb-6 mt-10">1. Rejuran là gì?</h2>
-            
             <p>
                 Thành phần chính của Rejuran là <strong>PN (Polynucleotide)</strong>, một đoạn DNA được chiết xuất từ cá hồi. PN có cấu trúc rất giống với DNA của con người nên ưu điểm lớn nhất là hầu như không gây phản ứng dị vật hay dị ứng.
             </p>
             <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 my-8">
                 <h3 class="text-lg font-bold text-gray-800 mb-2"><i class="fa-solid fa-microscope text-rose-500 mr-2"></i> Đặc điểm nổi bật</h3>
                 <p class="text-gray-600 text-base mb-0">
-                    Đặc biệt, Rejuran có trọng lượng phân tử trung bình khoảng 1000kDa, lớn hơn đáng kể so với các thành phần Skin Booster hay Hyaluronic Acid thông thường. Cấu trúc phân tử lớn này hoạt động chậm rãi trong mô da, tạo ra <strong>hiệu quả tái tạo bền vững</strong> thay vì chỉ cấp ẩm nhất thời.
+                    Đặc biệt, Rejuran có trọng lượng phân tử trung bình khoảng 1000kDa. Cấu trúc phân tử lớn này hoạt động chậm rãi trong mô da, tạo ra <strong>hiệu quả tái tạo bền vững</strong> thay vì chỉ cấp ẩm nhất thời.
                 </p>
             </div>
 
             <h2 class="text-2xl font-bold text-gray-900 mb-6 mt-12">2. Hiệu quả của Rejuran</h2>
-            <p>Khi Rejuran được tiêm vào da, nó mang lại hai tác động cốt lõi:</p>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div class="bg-blue-50 p-5 rounded-xl text-center">
                     <div class="text-3xl text-blue-500 mb-3"><i class="fa-solid fa-shield-virus"></i></div>
-                    <h4 class="font-bold text-gray-800 mb-2">Tác dụng kháng viêm mạnh mẽ</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">PN vốn là thành phần được dùng để điều trị viêm khớp, nên nó đóng vai trò làm dịu môi trường da đang bị tổn thương và viêm nhiễm.</p>
+                    <h4 class="font-bold text-gray-800 mb-2">Kháng viêm mạnh mẽ</h4>
+                    <p class="text-sm text-gray-600">Làm dịu môi trường da đang bị tổn thương và viêm nhiễm.</p>
                 </div>
                 <div class="bg-rose-50 p-5 rounded-xl text-center">
                     <div class="text-3xl text-rose-500 mb-3"><i class="fa-solid fa-spa"></i></div>
-                    <h4 class="font-bold text-gray-800 mb-2">Tái tạo da (Sản sinh Collagen)</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">Kích thích các nguyên bào sợi (Fibroblast) vốn đã hoạt động chậm lại, từ đó thúc đẩy sản sinh collagen và elastin một cách tích cực.</p>
+                    <h4 class="font-bold text-gray-800 mb-2">Tái tạo Collagen</h4>
+                    <p class="text-sm text-gray-600">Thúc đẩy sản sinh collagen và elastin, giúp da đàn hồi.</p>
                 </div>
             </div>
-            <p>
-                Kết quả là lớp trung bì (dermis) được lấp đầy collagen mới, giúp phục hồi độ đàn hồi, cải thiện kết cấu da, thu nhỏ lỗ chân lông và cân bằng dầu - độ ẩm, mang lại làn da khỏe mạnh toàn diện.
-            </p>
 
-            <hr class="border-gray-200 my-10">
-
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 mt-10">3. Lưu ý khi tiêm Rejuran (Hiện tượng sần da Embossing và độ sâu khi tiêm)</h2>
-            
-            <!-- Image 2: Skin Cross Section -->
-            <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/rejuran/skininjection.png?raw=true" alt="Mặt cắt da Rejuran và giải thích độ sâu tiêm chuẩn" class="w-full">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 mt-10">3. Lưu ý về hiện tượng sần da (Embossing)</h2>
+            <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/rejuran/skininjection.png?raw=true" alt="Giải thích độ sâu tiêm chuẩn Rejuran" class="w-full">
 
             <p>
-                Sau khi tiêm Rejuran, khuôn mặt thường xuất hiện các nốt sần nhỏ gọi là <strong>"Embossing"</strong>. Đây không phải là tác dụng phụ mà là hiện tượng hoàn toàn tự nhiên do thành phần phân tử lớn và độ nhớt của Rejuran.
+                Sau khi tiêm, các nốt sần nhỏ gọi là <strong>"Embossing"</strong> sẽ xuất hiện. Đây là bằng chứng cho thấy thuốc đã được đưa vào đúng lớp trung bì.
             </p>
-            <p class="font-bold text-gray-800">Điều quan trọng là "tiêm vào đâu".</p>
             
             <ul class="list-none space-y-4 my-6">
                 <li class="flex items-start">
                     <span class="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-1"><i class="fa-solid fa-check text-sm"></i></span>
-                    <span>
-                        <strong>Tiêm vào lớp trung bì (Khuyên dùng)</strong><br>
-                        Lớp trung bì - mục tiêu của Rejuran - có mật độ mô cao. Khi tiêm chính xác vào đây, các nốt sần ban đầu sẽ nhìn thấy rất rõ, nhưng thành phần thuốc sẽ lưu lại lâu để kích thích nguyên bào sợi, mang lại <strong>hiệu quả tái tạo vượt trội</strong>.
-                    </span>
+                    <span><strong>Tiêm vào lớp trung bì:</strong> Mang lại hiệu quả tái tạo vượt trội, nốt sần tan sau vài ngày.</span>
                 </li>
                 <li class="flex items-start">
                     <span class="flex-shrink-0 w-6 h-6 bg-red-100 text-red-500 rounded-full flex items-center justify-center mr-3 mt-1"><i class="fa-solid fa-xmark text-sm"></i></span>
-                    <span>
-                        <strong>Tiêm vào lớp mỡ dưới da (Không khuyên dùng)</strong><br>
-                        Nếu tiêm sâu hơn lớp trung bì, vào lớp mỡ, thuốc sẽ lan nhanh khiến nốt sần ít xuất hiện hơn, nhưng thuốc cũng bị hấp thụ và phân giải nhanh chóng, dẫn đến hiệu quả tái tạo rất thấp.
-                    </span>
+                    <span><strong>Tiêm vào lớp mỡ:</strong> Nốt sần ít hơn nhưng thuốc bị hấp thụ quá nhanh, hiệu quả rất thấp.</span>
                 </li>
             </ul>
-            <p class="bg-yellow-50 p-4 border-l-4 border-yellow-400 text-gray-700 italic">
-                "Nói cách khác, việc xuất hiện nốt sần chính là bằng chứng cho thấy thuốc đã được đưa vào đúng vị trí (lớp trung bì), vì vậy bạn không cần quá lo lắng về hiện tượng này, chúng sẽ biến mất trong vòng 1 tuần."
-            </p>
 
             <h2 class="text-2xl font-bold text-gray-900 mb-6 mt-12">4. Tại sao nên chọn Dove Clinic?</h2>
-            
-            <!-- Image 3: Doctor -->
-            <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/doctors/explain1.png?raw=true" alt="Bác sĩ Dove Clinic đang tư vấn quy trình tiêm Rejuran" class="w-full">
+            <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/doctors/explain1.png?raw=true" alt="Bác sĩ Dove Clinic tư vấn" class="w-full">
 
-            <p>
-                Rejuran nhìn có vẻ đơn giản, nhưng đây là thủ thuật mà kết quả phụ thuộc hoàn toàn vào <strong>tay nghề (Hand-skill) của bác sĩ</strong>.
-                Dove Clinic luôn tuân thủ các nguyên tắc sau:
-            </p>
-            <div class="space-y-4">
-                <div class="flex items-center p-4 bg-white shadow-sm border border-gray-100 rounded-lg">
-                    <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mr-4 font-bold">1</div>
-                    <div class="font-semibold text-gray-800">
-                        <span class="block text-sm text-rose-500 font-normal mb-1">Nhắm chuẩn xác lớp trung bì</span>
-                        Chúng tôi tiêm chính xác vào lớp trung bì, nơi tập trung collagen và elastin, chứ không tiêm vào lớp mỡ nơi hiệu quả thấp.
-                    </div>
+            <div class="space-y-4 mt-8">
+                <div class="p-4 bg-white shadow-sm border border-gray-100 rounded-lg flex items-center">
+                    <div class="w-8 h-8 bg-rose-600 text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold">1</div>
+                    <p class="text-sm font-semibold">Nhắm chuẩn xác lớp trung bì để tối đa hóa hiệu quả.</p>
                 </div>
-                <div class="flex items-center p-4 bg-white shadow-sm border border-gray-100 rounded-lg">
-                    <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mr-4 font-bold">2</div>
-                    <div class="font-semibold text-gray-800">
-                        <span class="block text-sm text-rose-500 font-normal mb-1">Khoảng cách đều và dày đặc</span>
-                        Dove Clinic thực hiện tiêm dày đặc với khoảng cách thích hợp để toàn bộ làn da được tái tạo đồng đều.
-                    </div>
+                <div class="p-4 bg-white shadow-sm border border-gray-100 rounded-lg flex items-center">
+                    <div class="w-8 h-8 bg-rose-600 text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</div>
+                    <p class="text-sm font-semibold">Kỹ thuật tiêm dày đặc, đồng đều trên toàn bộ bề mặt da.</p>
                 </div>
-                <div class="flex items-center p-4 bg-white shadow-sm border border-gray-100 rounded-lg">
-                    <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mr-4 font-bold">3</div>
-                    <div class="font-semibold text-gray-800">
-                        <span class="block text-sm text-rose-500 font-normal mb-1">Điều chỉnh áp lực và độ sâu đồng nhất</span>
-                        Chúng tôi điều chỉnh tinh tế độ sâu kim và áp lực tiêm để giảm thiểu tổn thương mô nhưng vẫn tối đa hóa hiệu quả.
-                    </div>
+                <div class="p-4 bg-white shadow-sm border border-gray-100 rounded-lg flex items-center">
+                    <div class="w-8 h-8 bg-rose-600 text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</div>
+                    <p class="text-sm font-semibold">Giảm thiểu đau đớn và tổn thương mô bằng tay nghề tinh tế.</p>
                 </div>
             </div>
-            
-            <p class="mt-8 font-medium text-gray-700">
-                Cùng một lượng thuốc, nhưng tiêm dày đặc bao nhiêu, độ sâu chính xác thế nào mới là cốt lõi của Rejuran. Dove Clinic cam kết mang đến quy trình điều trị tinh tế, nơi mỗi liệu trình đều được cân nhắc kỹ lưỡng dựa trên cấu trúc và nhu cầu riêng biệt của làn da.
-            </p>
         </div>
 
         <!-- Contact Section -->
-        <div class="mt-16 bg-gray-900 text-white rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-            <h3 class="text-2xl font-bold mb-4 font-serif">Bạn có lo lắng về da? Hãy thảo luận cùng Dove Clinic</h3>
-            <p class="text-gray-400 mb-8">Bạn có thể được tư vấn nhanh chóng và thuận tiện hơn qua Zalo.</p>
+        <div class="mt-16 bg-gray-900 text-white rounded-2xl p-8 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-rose-600"></div>
+            <h3 class="text-xl font-bold mb-4 font-serif">Bạn có lo lắng về da? Hãy thảo luận cùng Dove Clinic</h3>
+            <p class="text-gray-400 text-sm mb-8">Tư vấn nhanh chóng và thuận tiện hơn qua Zalo dành riêng cho khách hàng Việt.</p>
             
             <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                <!-- QR Code Display -->
-                <div class="bg-white p-2 rounded-lg w-48 h-48 flex-shrink-0">
-                    <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/QR.png?raw=true" onerror="this.src='https://placehold.co/200x200?text=QR+Code+Here'" alt="Zalo QR Code Dove Clinic" class="w-full h-full object-contain rounded">
+                <div class="bg-white p-2 rounded-lg w-40 h-40">
+                    <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/QR.png?raw=true" alt="Zalo QR" class="w-full h-full object-contain">
                 </div>
-                
-                <div class="text-left space-y-4">
-                    <a href="https://zalo.me/84963531040" target="_blank" class="inline-flex items-center justify-center w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all transform hover:-translate-y-1 shadow-lg">
-                        <i class="fa-solid fa-comment-dots mr-2"></i> Tư vấn qua Zalo ngay
+                <div class="text-left">
+                    <a href="https://zalo.me/84963531040" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all shadow-lg mb-4">
+                        <i class="fa-solid fa-comment-dots mr-2"></i> Nhắn tin qua Zalo
                     </a>
-                    <div class="text-sm text-gray-400 space-y-1">
-                        <p><i class="fa-solid fa-phone mr-2"></i> ID: 84963531040</p>
-                        <p><i class="fa-solid fa-location-dot mr-2"></i> 7F, 8F Jeong-an Bldg, 174 Dosan-daero, Gangnam-gu, Seoul</p>
+                    <div class="text-xs text-gray-500 space-y-1">
+                        <p><i class="fa-solid fa-phone mr-2"></i> Hotline: 84963531040</p>
+                        <p><i class="fa-solid fa-location-dot mr-2"></i> Gangnam-gu, Seoul, Hàn Quốc</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="mt-8 pt-8 border-t border-gray-800 text-xs text-gray-500">
-                Seoul Beauty Hub By Dove Clinic
             </div>
         </div>
     </main>
 
-    <footer class="text-center text-gray-400 py-6 text-sm">
+    <footer class="text-center text-gray-400 py-12 text-sm bg-gray-50">
         &copy; 2025 Seoul Beauty Hub. Mọi quyền được bảo lưu.
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" class="fixed bottom-6 right-6 bg-gray-800 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-gray-700 transition-all duration-300 opacity-0 invisible z-50 transform hover:-translate-y-1" aria-label="Lên đầu trang">
-        <i class="fa-solid fa-arrow-up"></i>
+    <!-- Floating Zalo Contact Button -->
+    <div class="fixed bottom-6 right-6 z-[100] zalo-floating-wrap">
+        <a href="https://zalo.me/84963531040" 
+           target="_blank" 
+           class="zalo-btn group flex items-center gap-3 pl-2 pr-6 py-2 rounded-full transition-all duration-300 hover:pr-8">
+            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+                <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo" class="w-7 h-7">
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[9px] text-blue-100 font-bold leading-tight uppercase">Liên hệ ngay</span>
+                <span class="text-white text-[11px] font-bold whitespace-nowrap">Tư vấn miễn phí qua Zalo</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTopBtn" class="fixed bottom-24 right-8 bg-white/80 backdrop-blur text-gray-800 w-10 h-10 rounded-full shadow border border-gray-100 flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fa-solid fa-arrow-up text-sm"></i>
     </button>
 
     <script>
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-        // Show/hide button based on scroll position
+        const btn = document.getElementById('scrollToTopBtn');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
-            } else {
-                scrollToTopBtn.classList.add('opacity-0', 'invisible');
-            }
+            if (window.scrollY > 400) { btn.classList.remove('opacity-0', 'invisible'); }
+            else { btn.classList.add('opacity-0', 'invisible'); }
         });
-
-        // Scroll to top when clicked
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        btn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     </script>
 
 </body>
