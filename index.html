@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seoul Beauty Hub - Blog Sự kiện & Khuyến mãi</title>
-    <!-- Tailwind CSS 및 Google Fonts -->
+    <title>Seoul Beauty Hub - Blog Sự kiện & Khuyến mãi | Skincare chuẩn Hàn</title>
+    
+    <!-- SEO Meta Tags: Tối ưu hóa tìm kiếm cho thị trường Việt Nam -->
+    <meta name="description" content="Khám phá phòng khám da liễu Hàn Quốc uy tín tại Seoul & Gangnam. Chuyên điều trị nám tàn nhang, trị mụn tận gốc và tiêm Rejuran Healer chuẩn Hàn cho người Việt.">
+    <meta name="keywords" content="phòng khám da liễu Hàn Quốc, thẩm mỹ viện Hàn Quốc, tiêm Rejuran Healer Gangnam, điều trị nám tàn nhang, skincare chuẩn Hàn, trị mụn tận gốc, Seoul Beauty Hub">
+    <meta name="author" content="Seoul Beauty Hub">
+    
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vaw4wd2lxk");
+    </script>
+
+    <!-- Tailwind CSS & Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root { 
             --sbh-green: #2D5A27; 
@@ -34,7 +50,7 @@
             border-color: var(--sbh-green); 
             box-shadow: 0 20px 40px rgba(45, 90, 39, 0.12);
         }
-        /* Fixed Aspect Ratio for Thumbnails (1:1) */
+        /* Fixed Aspect Ratio for Thumbnails */
         .thumb-box { 
             width: 140px; 
             height: 140px; 
@@ -43,7 +59,7 @@
         @media (max-width: 640px) {
             .thumb-box { width: 100%; height: 220px; }
         }
-        /* SNS Icon Style */
+        /* SNS Icon Effects */
         .sns-icon {
             width: 32px;
             height: 32px;
@@ -57,63 +73,37 @@
             opacity: 1;                
             transform: scale(1.1);    
         }
-        /* Nav Menu Underline Effect */
-        .nav-link {
-            position: relative;
-        }
+        .nav-link { position: relative; }
         .nav-link::after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
+            width: 0; height: 2px;
+            bottom: -4px; left: 0;
             background-color: var(--sbh-green);
             transition: width 0.3s ease;
         }
-        .nav-link:hover::after {
-            width: 100%;
-        }
+        .nav-link:hover::after { width: 100%; }
 
-        /* Floating Zalo Button Animation */
-        @keyframes pulse-soft {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.4); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(0, 104, 255, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
-        }
-        .floating-zalo-btn {
-            animation: pulse-soft 2s infinite;
-        }
-
-        /* Tooltip style */
-        .zalo-tooltip {
-            visibility: hidden;
-            opacity: 0;
-            transition: all 0.3s ease;
-            transform: translateX(10px);
-        }
-        .zalo-group:hover .zalo-tooltip {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(0);
+        /* SEO Content (Hidden from users, visible to bots) */
+        .seo-hidden {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center">
 
-    <!-- Zalo 버튼: 우측 하단으로 재배치 (이미지 가림 방지) -->
-    <a href="https://zalo.me/84963531040" target="_blank" class="fixed bottom-8 right-6 z-[100] flex items-center gap-3 zalo-group">
-        <!-- 상담 텍스트 라벨 -->
-        <div class="zalo-tooltip bg-[#0068ff] text-white px-4 py-2 rounded-lg shadow-xl font-bold text-xs whitespace-nowrap hidden sm:block">
-            Tư vấn qua Zalo ngay!
-        </div>
-        <!-- Pulse Icon -->
-        <div class="w-16 h-16 bg-[#0068ff] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95 overflow-hidden floating-zalo-btn border-2 border-white">
-            <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo Contact" class="w-10 h-10">
-        </div>
-    </a>
+    <!-- SEO Optimized Content -->
+    <div class="seo-hidden">
+        <h2>Phòng khám da liễu tại Gangnam uy tín nhất cho người Việt tại Hàn</h2>
+        <p>Tìm hiểu cách trị mụn tận gốc Hàn Quốc và bảng giá dịch vụ thẩm mỹ viện 2026. Skincare chuẩn Hàn tại Seoul.</p>
+    </div>
 
-    <!-- Top Navigation Menu -->
+    <!-- Navigation Area -->
     <nav class="fixed top-0 left-0 w-full z-50 border-b border-gray-100 px-6 py-4">
         <div class="max-w-3xl mx-auto flex justify-center items-center">
             <div class="flex gap-10">
@@ -130,11 +120,11 @@
             KOREAN BEAUTY STANDARD
         </div>
         <h1 class="text-4xl font-bold text-[#1A1A1B] uppercase tracking-tighter mb-2">Seoul Beauty Hub</h1>
-        <p class="text-gray-400 font-medium tracking-wide">Premium Clinic by Dove Clinic</p>
+        <p class="text-gray-400 font-medium tracking-wide">Phòng khám da liễu Hàn Quốc & Skincare chuẩn Hàn</p>
         <div class="w-16 h-[2px] bg-[#2D5A27] mx-auto mt-6"></div>
     </header>
 
-    <!-- Main Content Area -->
+    <!-- Blog Posts List -->
     <main class="max-w-3xl w-full px-6">
         <div class="flex items-center justify-between mb-8">
             <h2 class="text-2xl font-bold text-[#1A1A1B]">Sự kiện & Khuyến mãi</h2>
@@ -142,45 +132,45 @@
         </div>
         
         <div class="space-y-8">
-            <!-- Bài viết 1: Rejuran Post -->
+            <!-- Article 1: Rejuran Healer -->
             <article>
                 <a href="./post260129/index.html" class="event-card block bg-white rounded-3xl overflow-hidden shadow-sm group">
                     <div class="flex flex-col sm:flex-row">
                         <div class="thumb-box bg-gray-50 overflow-hidden">
                             <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/rejuran/original.png?raw=true" 
-                                 alt="Rejuran Gangnam" 
+                                 alt="Tiêm Rejuran Healer Gangnam chuẩn Hàn" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                 onerror="this.src='https://placehold.co/600x600/2d5a27/ffffff?text=Rejuran+Tips'">
+                                 onerror="this.src='https://placehold.co/600x600/2d5a27/ffffff?text=Rejuran+Healer'">
                         </div>
                         
                         <div class="p-8 flex flex-col justify-center flex-grow">
                             <div class="flex items-center gap-3 mb-3">
                                 <span class="px-2 py-0.5 bg-[#e8f5e9] text-[#2E7D32] text-[10px] font-bold rounded">NEW</span>
-                                <time class="text-xs font-semibold text-gray-400 uppercase tracking-widest">Tin mới nhất</time>
+                                <time class="text-xs font-semibold text-gray-400 uppercase tracking-widest">Tiêm Rejuran Gangnam</time>
                             </div>
                             <h3 class="text-2xl font-bold text-[#1A1A1B] group-hover:text-[#2D5A27] transition-colors leading-tight">
-                                Sau khi tiêm Rejuran Gangnam, Lý do thực sự xuất hiện các nốt sần
+                                Sau khi tiêm Rejuran Healer Gangnam, Lý do thực sự xuất hiện các nốt sần
                             </h3>
                             <p class="text-gray-400 text-sm mt-3 line-clamp-2 leading-relaxed">
-                                Đừng quá lo lắng khi thấy các nốt sần sau khi tiêm. Đây là dấu hiệu cho thấy dưỡng chất đang được hấp thụ đúng cách. Cùng tìm hiểu tại sao nhé!
+                                Đừng quá lo lắng khi thấy các nốt sần sau khi tiêm. Đây là liệu trình Glass Skin da căng bóng đang hot nhất tại các thẩm mỹ viện Hàn Quốc.
                             </p>
                             <div class="mt-6 flex items-center text-[#2D5A27] font-bold text-sm">
-                                Xem giải đáp <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                                Xem giải đáp tại Clinic <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                             </div>
                         </div>
                     </div>
                 </a>
             </article>
 
-            <!-- Bài viết 2: 2월 이벤트 카드 -->
+            <!-- Article 2: Feb Event -->
             <article>
                 <a href="./feb-event/index.html" class="event-card block bg-white rounded-3xl overflow-hidden shadow-sm group">
                     <div class="flex flex-col sm:flex-row">
                         <div class="thumb-box bg-gray-50 overflow-hidden">
                             <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/22.png?raw=true" 
-                                 alt="Tháng 2 Event" 
+                                 alt="Bảng giá dịch vụ thẩm mỹ viện 2026 Seoul" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                 onerror="this.src='https://placehold.co/600x600/2d5a27/ffffff?text=February+Event'">
+                                 onerror="this.src='https://placehold.co/600x600/2d5a27/ffffff?text=Event+Clinic'">
                         </div>
                         
                         <div class="p-8 flex flex-col justify-center flex-grow">
@@ -189,13 +179,13 @@
                                 <time class="text-xs font-semibold text-gray-400 uppercase tracking-widest">Tháng 2, 2026</time>
                             </div>
                             <h3 class="text-2xl font-bold text-[#1A1A1B] group-hover:text-[#2D5A27] transition-colors leading-tight">
-                                Khuyến mãi Đặc biệt Tháng 2: Đón Tết Rạng Ngời
+                                Khuyến mãi Đặc biệt Tháng 2: Bảng giá dịch vụ thẩm mỹ viện tốt nhất
                             </h3>
                             <p class="text-gray-400 text-sm mt-3 line-clamp-2 leading-relaxed">
-                                Giải pháp làm đẹp chuẩn Hàn dành riêng cho người Việt tại Hàn Quốc. Hãy để chuyên gia chăm sóc làn da của bạn đón một cái Tết thật rạng rỡ.
+                                Điều trị nám tàn nhang hiệu quả và trẻ hóa làn da toàn diện với chi phí ưu đãi dành cho người Việt tại Hàn Quốc.
                             </p>
                             <div class="mt-6 flex items-center text-[#2D5A27] font-bold text-sm">
-                                Xem chi tiết <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                                Xem chi tiết khuyến mãi <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                             </div>
                         </div>
                     </div>
@@ -203,9 +193,9 @@
             </article>
         </div>
 
-        <!-- Clinic Location Section -->
+        <!-- Clinic Location -->
         <section id="location" class="mt-20 scroll-mt-24">
-            <h2 class="text-2xl font-bold text-[#1A1A1B] mb-8 pb-2 border-b">Vị trí phòng khám</h2>
+            <h2 class="text-2xl font-bold text-[#1A1A1B] mb-8 pb-2 border-b">Vị trí phòng khám da liễu Hàn Quốc</h2>
             <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-50 flex flex-col md:flex-row gap-8">
                 <div class="flex-grow">
                     <div class="space-y-6">
@@ -214,7 +204,7 @@
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-[#1A1A1B]">Địa chỉ</h4>
+                                <h4 class="font-bold text-[#1A1A1B]">Địa chỉ tại Seoul</h4>
                                 <p class="text-gray-500 text-sm mt-1">
                                     Tầng 7 & 8, Tòa nhà Jeong-an, 174 Dosan-daero, Quận Gangnam, Seoul.<br>
                                     (서울특별시 강남구 도산대로 174 정안빌딩 7, 8층)
@@ -226,7 +216,7 @@
                     <div class="mt-8">
                         <a href="https://maps.app.goo.gl/kAeFGU3h5mkPtDMW8" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#2D5A27] text-white font-bold rounded-full text-sm hover:bg-[#1f421b] transition-colors">
                             <i class="fa-solid fa-map-location-dot mr-2"></i>
-                            Mở Google Maps
+                            Mở Google Maps dẫn tới Clinic
                         </a>
                     </div>
                 </div>
@@ -244,38 +234,33 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Area -->
     <footer class="mt-32 pb-20 text-center border-t border-gray-100 pt-12 w-full max-w-xl px-6">
         <p class="text-[#2D5A27] font-bold text-lg mb-2">Seoul Beauty Hub</p>
-        <p class="text-gray-400 text-xs mb-8">Giải pháp làm đẹp chuẩn Hàn cho người Việt</p>
+        <p class="text-gray-400 text-xs mb-8">Địa chỉ làm đẹp cho người Việt tại Hàn - Skincare chuẩn Hàn</p>
         
-        <!-- SNS Icon List -->
         <div class="flex justify-center items-center gap-10 mb-10">
             <a href="https://www.facebook.com/profile.php?id=61586287086577" target="_blank" class="sns-link" title="Facebook">
-                <img src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook" class="sns-icon">
+                <img src="https://img.icons8.com/color/96/facebook-new.png" alt="Facebook Seoul Beauty Hub" class="sns-icon">
             </a>
-            
             <a href="https://zalo.me/84963531040" target="_blank" class="sns-link" title="Zalo">
-                <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo" class="sns-icon">
+                <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo Tư vấn thẩm mỹ" class="sns-icon">
             </a>
-            
             <a href="https://www.instagram.com/seoul_beautyhub" target="_blank" class="sns-link" title="Instagram">
-                <img src="https://img.icons8.com/color/96/instagram-new.png" alt="Instagram" class="sns-icon">
+                <img src="https://img.icons8.com/color/96/instagram-new.png" alt="Instagram Seoul Beauty Hub" class="sns-icon">
             </a>
         </div>
         
         <p class="text-gray-300 text-[10px] uppercase tracking-widest">© 2025 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
     </footer>
 
-    <!-- Script for smooth scroll on hash link -->
+    <!-- Smooth Scrolling Helper -->
     <script>
         window.addEventListener('load', function() {
             if (window.location.hash === '#location') {
                 const element = document.getElementById('location');
                 if (element) {
-                    setTimeout(() => {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    setTimeout(() => { element.scrollIntoView({ behavior: 'smooth' }); }, 100);
                 }
             }
         });
