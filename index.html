@@ -84,19 +84,32 @@
         .floating-zalo-btn {
             animation: pulse-soft 2s infinite;
         }
+
+        /* Tooltip style */
+        .zalo-tooltip {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: translateX(10px);
+        }
+        .zalo-group:hover .zalo-tooltip {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center">
 
-    <!-- Floating Zalo Button (Moved to Right Center with visible label) -->
-    <a href="https://zalo.me/84963531040" target="_blank" class="fixed top-1/2 -translate-y-1/2 right-4 z-[100] flex items-center gap-2 group">
-        <!-- Always Visible Label -->
-        <div class="bg-white px-4 py-2 rounded-full shadow-lg text-[#2D5A27] font-bold text-xs border border-gray-100 whitespace-nowrap hidden sm:block">
-            Tư vấn qua Zalo
+    <!-- Zalo 버튼: 우측 하단으로 재배치 (이미지 가림 방지) -->
+    <a href="https://zalo.me/84963531040" target="_blank" class="fixed bottom-8 right-6 z-[100] flex items-center gap-3 zalo-group">
+        <!-- 상담 텍스트 라벨 -->
+        <div class="zalo-tooltip bg-[#0068ff] text-white px-4 py-2 rounded-lg shadow-xl font-bold text-xs whitespace-nowrap hidden sm:block">
+            Tư vấn qua Zalo ngay!
         </div>
         <!-- Pulse Icon -->
-        <div class="w-14 h-14 bg-[#0068ff] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95 overflow-hidden floating-zalo-btn">
-            <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo Contact" class="w-9 h-9">
+        <div class="w-16 h-16 bg-[#0068ff] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95 overflow-hidden floating-zalo-btn border-2 border-white">
+            <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo Contact" class="w-10 h-10">
         </div>
     </a>
 
@@ -232,7 +245,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-32 pb-12 text-center border-t border-gray-100 pt-12 w-full max-w-xl px-6">
+    <footer class="mt-32 pb-20 text-center border-t border-gray-100 pt-12 w-full max-w-xl px-6">
         <p class="text-[#2D5A27] font-bold text-lg mb-2">Seoul Beauty Hub</p>
         <p class="text-gray-400 text-xs mb-8">Giải pháp làm đẹp chuẩn Hàn cho người Việt</p>
         
