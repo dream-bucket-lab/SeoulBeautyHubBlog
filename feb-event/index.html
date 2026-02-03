@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khuyến mãi Đặc biệt Tháng 2 - Seoul Beauty Hub</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tổng hợp các chương trình khuyến mãi dịch vụ thẩm mỹ viện tháng 2/2026 tại Seoul Beauty Hub. Ưu đãi đặc biệt cho các dịch vụ trị nám, trị mụn và trẻ hóa da.">
+    
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vaw4wd2lxk");
+    </script>
+
     <!-- Tailwind CSS 및 Google Fonts 로드 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 프리미엄 그린 컬러 팔레트 */
             --sbh-green: #2D5A27;
             --sbh-navy: #1A1A1B;
             --sbh-bg: #F4F7F4;
@@ -162,43 +174,21 @@
             line-height: 1;
         }
 
-        /* Floating Zalo Button Animation */
-        @keyframes pulse-soft {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.4); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(0, 104, 255, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+        /* Floating Zalo Button Enhanced Style */
+        .zalo-floating-wrap {
+            animation: float-up 3s ease-in-out infinite;
         }
-        .floating-zalo-btn {
-            animation: pulse-soft 2s infinite;
+        @keyframes float-up {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-        
-        /* Tooltip style */
-        .zalo-tooltip {
-            visibility: hidden;
-            opacity: 0;
-            transition: all 0.3s ease;
-            transform: translateX(10px);
-        }
-        .zalo-group:hover .zalo-tooltip {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(0);
+        .zalo-btn {
+            background: linear-gradient(135deg, #0068E0 0%, #004699 100%);
+            box-shadow: 0 10px 25px rgba(0, 104, 224, 0.3);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center">
-
-    <!-- Zalo 버튼: 우측 하단으로 배치 변경 (이미지 가림 방지) -->
-    <a href="https://zalo.me/84963531040" target="_blank" class="fixed bottom-8 right-6 z-[100] flex items-center gap-3 zalo-group">
-        <!-- 상담 텍스트 라벨 (호버 시 또는 모바일에서도 인지하기 쉽게 배치) -->
-        <div class="zalo-tooltip bg-[#0068ff] text-white px-4 py-2 rounded-lg shadow-xl font-bold text-xs whitespace-nowrap hidden sm:block">
-            Kết nối Zalo tư vấn ngay!
-        </div>
-        <!-- Pulse Icon -->
-        <div class="w-16 h-16 bg-[#0068ff] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95 overflow-hidden floating-zalo-btn border-2 border-white">
-            <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo Contact" class="w-10 h-10">
-        </div>
-    </a>
 
     <!-- Top Navigation Menu -->
     <nav class="fixed top-0 left-0 w-full z-50 border-b border-gray-100 px-6 py-4">
@@ -302,6 +292,21 @@
         
         <p class="text-gray-400 text-[10px] uppercase tracking-widest">© 2025 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
     </footer>
+
+    <!-- Floating Zalo Contact Button (New Style) -->
+    <div class="fixed bottom-6 right-6 z-[100] zalo-floating-wrap">
+        <a href="https://zalo.me/84963531040" 
+           target="_blank" 
+           class="zalo-btn group flex items-center gap-3 pl-2 pr-6 py-2 rounded-full transition-all duration-300 hover:pr-8">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:rotate-12 transition-transform">
+                <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo" class="w-8 h-8">
+            </div>
+            <div class="flex flex-col">
+                <span class="text-[10px] text-blue-100 font-bold leading-tight uppercase tracking-tighter">Liên hệ ngay</span>
+                <span class="text-white text-xs font-bold whitespace-nowrap">Tư vấn miễn phí qua Zalo</span>
+            </div>
+        </a>
+    </div>
 
     <script>
         function handleImageLoad(img) {
