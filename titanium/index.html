@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nâng cơ Titanium, tại sao vừa có hiệu quả tức thì vừa duy trì lâu dài? (ft. Phòng khám Dove)</title>
     
-    <!-- SEO Meta Tags: Tối ưu hóa tìm kiếm cho thị trường Việt Nam -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Khám phá phòng khám da liễu Hàn Quốc uy tín tại Seoul & Gangnam. Chuyên điều trị nám tàn nhang, trị mụn tận gốc và tiêm Rejuran Healer chuẩn Hàn cho người Việt.">
     <meta name="keywords" content="phòng khám da liễu Hàn Quốc, thẩm mỹ viện Hàn Quốc, tiêm Rejuran Healer Gangnam, điều trị nám tàn nhang, skincare chuẩn Hàn, trị mụn tận gốc, Seoul Beauty Hub">
     <meta name="author" content="Seoul Beauty Hub">
@@ -20,14 +20,18 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Updated Lucide Library Source -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --sbh-green: #2D5A27;
+            --zalo-blue: #0068FF;
+        }
         body {
             font-family: 'Noto Sans', sans-serif;
             color: #333;
             line-height: 1.7;
+            background-color: #fff;
         }
         h1, h2, h3, h4, h5, h6 {
             font-weight: 700;
@@ -41,248 +45,130 @@
             color: #111;
             font-weight: 600;
         }
-        /* SEO Hidden Content Style */
-        .seo-hidden {
+        
+        /* Zalo Floating Animation */
+        @keyframes float-zalo {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .zalo-floating-wrap {
+            animation: float-zalo 3s ease-in-out infinite;
+        }
+
+        /* Zalo Button Style */
+        .zalo-btn {
+            background-color: var(--zalo-blue);
+            box-shadow: 0 10px 25px rgba(0, 104, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .zalo-btn:hover {
+            background-color: #0056D6;
+            box-shadow: 0 15px 30px rgba(0, 104, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
             position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
+            width: 0; height: 2px;
+            bottom: -4px; left: 0;
+            background-color: var(--sbh-green);
+            transition: width 0.3s ease;
         }
-        /* Floating Zalo Button Animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-        }
-        .zalo-float {
-            animation: float 2s ease-in-out infinite;
-        }
+        .nav-link:hover::after { width: 100%; }
     </style>
 </head>
-<body class="bg-white pt-20">
-
-    <!-- SEO Optimized Content -->
-    <div class="seo-hidden">
-        <h2>Phòng khám da liễu tại Gangnam uy tín nhất cho người Việt tại Hàn</h2>
-        <p>Tìm hiểu cách trị mụn tận gốc Hàn Quốc và bảng giá dịch vụ thẩm mỹ viện 2026. Skincare chuẩn Hàn tại Seoul.</p>
-    </div>
+<body class="pt-20">
 
     <!-- Navigation Area -->
     <nav class="fixed top-0 left-0 w-full z-50 border-b border-gray-100 px-6 py-4 bg-white/95 backdrop-blur-sm">
-        <div class="max-w-3xl mx-auto flex justify-center items-center">
+        <div class="max-w-3xl mx-auto flex justify-center items-center text-center">
             <div class="flex gap-10">
-                <a href="https://seoulbeautyhub.com/" class="nav-link text-xs font-bold text-[#1A1A1B] tracking-widest uppercase hover:text-blue-600 transition">Home</a>
-                <a href="https://seoulbeautyhub.com/hospitals" class="nav-link text-xs font-bold text-[#1A1A1B] tracking-widest uppercase hover:text-blue-600 transition">Hospital</a>
+                <a href="https://seoulbeautyhub.com/" class="nav-link text-xs font-bold text-[#1A1A1B] tracking-widest uppercase transition">Home</a>
+                <a href="https://seoulbeautyhub.com/hospitals" class="nav-link text-xs font-bold text-[#1A1A1B] tracking-widest uppercase transition">Hospital</a>
                 <a href="https://blog.seoulbeautyhub.com/" class="nav-link text-xs font-bold text-[#2D5A27] tracking-widest uppercase border-b-2 border-[#2D5A27]">Blog</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Blog Content Wrapper -->
+    <!-- Main Content -->
     <main class="max-w-3xl mx-auto px-4 py-12">
-        
-        <!-- Article Header -->
-        <div class="mb-10 text-center">
-            <!-- Category Tag Removed -->
+        <header class="mb-10 text-center">
             <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
                 Nâng cơ Titanium, tại sao vừa có hiệu quả tức thì vừa duy trì lâu dài?
             </h1>
-            <!-- Date and Author Info Removed -->
-        </div>
+        </header>
 
-        <!-- Article Body -->
-        <div class="prose prose-lg max-w-none">
-            
-            <!-- Intro -->
+        <article class="prose prose-lg max-w-none">
             <div class="bg-gray-50 border-l-4 border-blue-600 p-6 rounded-r-lg mb-10">
                 <p class="mb-0 text-gray-700 italic">
                     "Xin chào. Đây là <strong>Phòng khám Dove</strong>, nơi luôn tận tâm và cam kết mang lại quy trình điều trị chuẩn y khoa."
                 </p>
             </div>
 
-            <p>
-                Gần đây, phương pháp <strong>"Nâng cơ Titanium"</strong> đang nhận được sự quan tâm lớn từ những khách hàng muốn thon gọn đường nét khuôn mặt nhanh chóng trước các sự kiện quan trọng, hoặc những ai mong muốn làn da săn chắc mà không hề đau đớn.
-            </p>
-            <p>
-                Hôm nay, chúng tôi sẽ giải thích chi tiết về nguyên lý của máy <strong>Soprano Titanium</strong> – một phương pháp hoàn toàn khác biệt so với các loại nâng cơ trước đây, cũng như chu kỳ điều trị hiệu quả và tiêu chí lựa chọn phòng khám uy tín.
-            </p>
+            <p>Gần đây, phương pháp <strong>"Nâng cơ Titanium"</strong> đang nhận được sự quan tâm lớn từ những khách hàng muốn thon gọn đường nét khuôn mặt nhanh chóng...</p>
 
-            <hr class="my-10 border-gray-200">
-
-            <!-- Section 1 -->
             <h2 class="text-2xl font-bold mb-6 mt-12 flex items-center gap-3">
                 <span class="bg-black text-white w-8 h-8 flex items-center justify-center rounded-full text-sm">1</span>
                 Khác biệt với Ulthera và Thermage! Nâng cơ Titanium là gì?
             </h2>
-            <p>
-                Các thiết bị nâng cơ nổi tiếng hiện nay như Ulthera hay Shurink sử dụng sóng siêu âm, trong khi Thermage hay Inmode sử dụng tần số vô tuyến (RF). Ngược lại, <strong>Nâng cơ Titanium</strong> là phương pháp nâng cơ bằng laser sử dụng thiết bị <em>'Soprano Titanium'</em> được phát triển bởi hãng Alma (Israel).
-            </p>
-            <p>
-                Đặc điểm lớn nhất là khả năng phát ra đồng thời <strong>ba bước sóng laser</strong> khác nhau. Tùy thuộc vào độ dài bước sóng mà độ sâu thâm nhập vào da sẽ khác nhau, và ba bước sóng này giúp truyền năng lượng toàn diện từ lớp nông đến lớp sâu của da.
-            </p>
-            
-            <!-- Image 2 & 3 Added: Fixed height with object-contain to prevent cropping -->
             <div class="grid md:grid-cols-2 gap-4 my-8">
                 <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/titanum/image004.png?raw=true" alt="Cơ chế Soprano Titanium 1" class="rounded-lg shadow-md w-full h-64 md:h-80 object-contain bg-gray-50 border border-gray-100">
                 <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/titanum/image003.jpg?raw=true" alt="Cơ chế Soprano Titanium 2" class="rounded-lg shadow-md w-full h-64 md:h-80 object-contain bg-gray-50 border border-gray-100">
             </div>
 
-            <!-- Section 2 -->
             <h2 class="text-2xl font-bold mb-6 mt-12 flex items-center gap-3">
                 <span class="bg-black text-white w-8 h-8 flex items-center justify-center rounded-full text-sm">2</span>
                 Bí mật của "3 bước sóng" tác động 3 tầng sâu dưới da
             </h2>
-            <p>
-                Lý do Nâng cơ Titanium mang lại hiệu quả mạnh mẽ là nhờ vào vai trò riêng biệt của ba bước sóng <strong>755nm, 810nm và 1,064nm</strong>.
-            </p>
-            
-            <!-- Image 4 Added -->
             <figure class="my-8">
-                <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/titanum/skinimage.png?raw=true" alt="Cấu trúc da và tác động của 3 bước sóng" class="rounded-lg shadow-md w-full h-auto">
+                <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/titanum/skinimage.png?raw=true" alt="Cấu trúc da" class="rounded-lg shadow-md w-full h-auto">
             </figure>
 
-            <div class="grid gap-4 mb-8">
-                <div class="bg-white border border-gray-200 p-5 rounded-lg shadow-sm hover:border-blue-300 transition">
-                    <h3 class="text-lg font-bold text-blue-700 mb-2">⚡ 755nm (Lớp biểu bì)</h3>
-                    <p class="text-sm mb-0">Tác động vào nang lông và sắc tố melanin. Giúp da sáng lên tức thì và mang lại hiệu quả triệt lông, đây là lý do khuôn mặt bạn trông rạng rỡ hơn ngay sau khi điều trị.</p>
-                </div>
-                <div class="bg-white border border-gray-200 p-5 rounded-lg shadow-sm hover:border-blue-300 transition">
-                    <h3 class="text-lg font-bold text-blue-700 mb-2">⚡ 810nm (Lớp trung bì)</h3>
-                    <p class="text-sm mb-0">Kích thích "nguyên bào sợi" – chìa khóa của độ đàn hồi da. Dưới tác động nhiệt, nguyên bào sợi sẽ sản sinh collagen và elastin mới, thúc đẩy quá trình tái tạo da.</p>
-                </div>
-                <div class="bg-white border border-gray-200 p-5 rounded-lg shadow-sm hover:border-blue-300 transition">
-                    <h3 class="text-lg font-bold text-blue-700 mb-2">⚡ 1,064nm (Lớp sâu nhất)</h3>
-                    <p class="text-sm mb-0">Thâm nhập sâu đến lớp mỡ dưới da và gần lớp cân cơ (SMAS). Giúp co rút các sợi collagen bị giãn và củng cố dây chằng nâng đỡ, làm da săn chắc và thon gọn.</p>
-                </div>
-            </div>
-
-            <p>
-                Vì năng lượng được phân tán đều khắp các tầng da nên <strong>không gây tổn thương nhiệt quá mức</strong> tại một điểm, do đó hầu như không sưng, không bầm tím và bạn có thể quay lại sinh hoạt thường ngày ngay lập tức mà không cần thời gian nghỉ dưỡng.
-            </p>
-
-            <!-- Section 3 -->
             <h2 class="text-2xl font-bold mb-6 mt-12 flex items-center gap-3">
                 <span class="bg-black text-white w-8 h-8 flex items-center justify-center rounded-full text-sm">3</span>
                 Hiệu quả tức thì và sự thay đổi thực sự
             </h2>
-            <p>
-                Sức hút lớn nhất của Nâng cơ Titanium là sự thay đổi cảm nhận được ngay sau khi làm. Khi bước ra khỏi phòng điều trị, bạn sẽ thấy khuôn mặt được nâng lên rõ rệt và đường nét gọn gàng hơn. Đó là do nhiệt năng làm co rút tức thì các sợi collagen đang bị chùng nhão. Vì vậy, rất nhiều khách hàng tìm đến phương pháp này trước lễ cưới hay các buổi chụp hình quan trọng.
-            </p>
-            <p>
-                Tuy nhiên, đó mới chỉ là sự khởi đầu. <strong>Sự thay đổi thực sự sẽ diễn ra từ từ sau đó.</strong> Làn da cần thời gian để sản sinh collagen mới sau khi được kích thích. Khoảng 2-3 tháng sau điều trị, dù hiệu quả nâng cơ ban đầu có vẻ giảm nhẹ, nhưng thực tế độ đàn hồi và kết cấu da sẽ tốt hơn, lỗ chân lông thu nhỏ và đường nét khuôn mặt trở nên rõ ràng hơn nhờ sự thay đổi từ gốc.
-            </p>
+            <p>Sức hút lớn nhất의 Nâng cơ Titanium là sự thay đổi cảm nhận được ngay sau khi làm...</p>
 
-            <!-- Section 4 -->
-            <h2 class="text-2xl font-bold mb-6 mt-12 flex items-center gap-3">
-                <span class="bg-black text-white w-8 h-8 flex items-center justify-center rounded-full text-sm">4</span>
-                Tại sao lại khuyên dùng liệu trình "3 lần, cách nhau 1 tháng"?
-            </h2>
-            <div class="bg-blue-50 p-6 rounded-xl mb-6">
+            <div class="bg-blue-50 p-6 rounded-xl my-10">
+                <h3 class="text-xl font-bold mb-4 text-blue-900">Liệu trình khuyên dùng:</h3>
                 <ul class="space-y-2 list-none pl-0">
-                    <li class="flex items-center gap-2 text-blue-800">
-                        <i data-lucide="calendar-check" class="w-4 h-4"></i> <strong>Tần suất:</strong> 3 lần
-                    </li>
-                    <li class="flex items-center gap-2 text-blue-800">
-                        <i data-lucide="clock" class="w-4 h-4"></i> <strong>Khoảng cách:</strong> 1 tháng/lần
-                    </li>
-                     <li class="flex items-center gap-2 text-blue-800">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i> <strong>Duy trì:</strong> 1 ~ 2 năm
-                    </li>
+                    <li class="flex items-center gap-2 text-blue-800"><i data-lucide="calendar-check" class="w-4 h-4"></i> 3 lần điều trị</li>
+                    <li class="flex items-center gap-2 text-blue-800"><i data-lucide="clock" class="w-4 h-4"></i> Cách nhau 1 tháng</li>
+                    <li class="flex items-center gap-2 text-blue-800"><i data-lucide="shield-check" class="w-4 h-4"></i> Duy trì 1-2 năm</li>
                 </ul>
             </div>
-            <p>
-                Giống như việc tập thể dục đều đặn mới tạo ra cơ bắp, việc sản sinh collagen cũng cần những kích thích lặp lại. Nếu chỉ làm 1 lần, bạn có thể cảm thấy thời gian duy trì hiệu quả khá ngắn.
-            </p>
-            <p>
-                Tại Phòng khám Dove, chúng tôi khuyên bạn nên thực hiện 3 lần, mỗi lần cách nhau 1 tháng cho liệu trình đầu tiên. Cân nhắc theo chu kỳ tái tạo da, khi collagen bắt đầu được sản sinh từ lần 1, việc thực hiện tiếp lần 2 và lần 3 sẽ giúp cấu trúc da được cải thiện vững chắc hơn.
-            </p>
-            
-            <!-- Image 5 Added -->
-            <figure class="my-8">
-                <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/titanum/image010.gif?raw=true" alt="Quy trình điều trị Titanium Lifting" class="rounded-lg shadow-md w-full h-auto">
-            </figure>
-
-            <!-- Section 5 -->
-            <h2 class="text-2xl font-bold mb-8 mt-12 border-b-2 border-black pb-2 inline-block">
-                5. Nâng cơ Titanium: Cách chọn phòng khám để không thất bại
-            </h2>
-            <p>Đối với Nâng cơ Titanium, tay nghề của người thực hiện cũng quan trọng không kém gì thiết bị tốt.</p>
-
-            <div class="space-y-6">
-                <div class="flex gap-4 items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold text-xl text-gray-400">1</div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-1">Kinh nghiệm điều trị dày dặn</h4>
-                        <p class="text-sm text-gray-600">Bác sĩ cần phải quan sát phản ứng thực tế của bệnh nhân để kết hợp linh hoạt giữa chế độ Stack và SHR, cũng như điều chỉnh cường độ năng lượng để đạt kết quả an toàn và hiệu quả nhất.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold text-xl text-gray-400">2</div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-1">Viện trưởng trực tiếp tư vấn</h4>
-                        <p class="text-sm text-gray-600">Mỗi người đều có độ dày da, mức độ chảy xệ và ngưỡng chịu đau khác nhau.</p>
-                        <!-- Image 6 Inserted inside the text block for better layout -->
-                        <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/doctors/Explain2.png?raw=true" alt="Bác sĩ tư vấn trực tiếp" class="mt-4 rounded-lg shadow-sm w-full h-auto border border-gray-100">
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gray-50 p-6 rounded-lg mt-8">
-                <p class="mb-0">
-                    Tại <strong>Phòng khám Dove</strong>, chúng tôi tuân thủ nguyên tắc Viện trưởng trực tiếp thăm khám trước. Chúng tôi xác định chính xác tình trạng da của bệnh nhân và không khuyến khích các thủ thuật không cần thiết. Chúng tôi chỉ tiến hành điều trị cho những ai thực sự cần, với sự kết hợp chế độ phù hợp và điều chỉnh năng lượng tỉ mỉ, đồng thời theo dõi sát sao quá trình hồi phục sau đó.
-                </p>
-            </div>
-
-            <p class="mt-8 font-medium text-center text-lg">
-                Nếu bạn muốn cải thiện làn da từ trong ra ngoài với Nâng cơ Titanium, hãy trao đổi với Phòng khám Dove – nơi cam kết chẩn đoán kỹ lưỡng và điều trị tinh tế.
-            </p>
 
             <hr class="my-12 border-gray-200">
 
-            <!-- CTA / Contact Section -->
+            <!-- Contact Section -->
             <div class="bg-gray-100 rounded-2xl p-8 text-center">
                 <h3 class="text-xl font-bold mb-4">Bạn có thắc mắc về Nâng cơ Titanium?</h3>
-                <p class="mb-8 text-sm text-gray-600">Tư vấn nhanh chóng và thuận tiện hơn qua Zalo dành riêng cho khách hàng Việt.</p>
-                
                 <div class="flex flex-col items-center gap-6">
-                    <!-- QR Code Placeholder -->
-                    <div class="bg-white p-2 rounded-lg shadow-sm w-32 h-32 flex items-center justify-center">
+                    <div class="bg-white p-2 rounded-lg shadow-sm w-32 h-32">
                          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zalo.me/84963531040" alt="Zalo QR" class="w-full h-full">
                     </div>
-                    
-                    <a href="https://zalo.me/84963531040" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition shadow-lg flex items-center gap-2">
-                        Nhắn tin qua Zalo
-                        <i data-lucide="send" class="w-4 h-4"></i>
+                    <a href="zalo://conversation?phone=84963531040" onclick="handleZaloLink(event)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition shadow-lg flex items-center gap-2">
+                        Nhắn tin qua Zalo <i data-lucide="send" class="w-4 h-4"></i>
                     </a>
-                    
-                    <div class="text-xs text-gray-500 mt-2">
-                        <p class="font-bold">Hotline: 84963531040</p>
-                        <p>Gangnam-gu, Seoul, Hàn Quốc</p>
-                    </div>
                 </div>
             </div>
-
-        </div>
+        </article>
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-50 border-t border-gray-200 py-8 text-center text-gray-500 text-sm">
-        <div class="max-w-4xl mx-auto px-4">
-            <p>&copy; 2026 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
-        </div>
+        <p>&copy; 2026 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
     </footer>
 
-   
     <!-- Floating Zalo Contact Button -->
     <div class="fixed bottom-6 right-6 z-[100] zalo-floating-wrap">
         <a href="zalo://conversation?phone=84963531040" 
+           onclick="handleZaloLink(event)"
            target="_blank" 
-           class="zalo-btn group flex items-center gap-3 pl-2 pr-6 py-2 rounded-full transition-all duration-300 hover:pr-8">
+           class="zalo-btn group flex items-center gap-3 pl-2 pr-6 py-2 rounded-full transition-all duration-300">
             <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
                 <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/icons8-zalo-480.png?raw=true" alt="Zalo" class="w-7 h-7">
             </div>
@@ -294,16 +180,19 @@
     </div>
 
     <script>
-        // Check if lucide is defined before running to prevent crash
+        // Zalo Redirect Issue Solver
+        function handleZaloLink(e) {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const phoneNumber = "84963531040";
+            
+            if (!isMobile) {
+                e.preventDefault();
+                window.open("https://chat.zalo.me/?phone=" + phoneNumber, "_blank");
+            }
+        }
+
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
-        } else {
-            // Retry once on DOMContentLoaded in case of async loading issues
-            window.addEventListener('DOMContentLoaded', () => {
-                if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
-                }
-            });
         }
     </script>
 </body>
