@@ -1,14 +1,109 @@
- <!-- Floating Zalo Contact Button (New Style) -->
-    <div class="fixed bottom-6 right-6 z-[100] zalo-floating-wrap">
-        <a href="https://zalo.me/84963531040" 
-           target="_blank" 
-           class="zalo-btn group flex items-center gap-3 pl-2 pr-6 py-2 rounded-full transition-all duration-300 hover:pr-8">
-            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:rotate-12 transition-transform">
-                <img src="https://img.icons8.com/color/96/zalo.png" alt="Zalo" class="w-8 h-8">
-            </div>
-            <div class="flex flex-col">
-                <span class="text-[10px] text-blue-100 font-bold leading-tight uppercase tracking-tighter">Liên hệ ngay</span>
-                <span class="text-white text-xs font-bold whitespace-nowrap">Tư vấn miễn phí qua Zalo</span>
-            </div>
-        </a>
-    </div>
+<!-- 1. Zalo Style (CSS) - <head> 안에 넣거나 HTML 하단에 함께 두셔도 됩니다 -->
+<style>
+    :root {
+        --zalo-blue: #0068FF;
+    }
+
+    /* 위아래로 둥둥 떠 있는 애니메이션 */
+    @keyframes float-zalo {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .zalo-floating-wrap {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 1000;
+        animation: float-zalo 3s ease-in-out infinite;
+    }
+
+    /* Zalo 버튼 기본 디자인 */
+    .zalo-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background-color: var(--zalo-blue);
+        padding: 8px 24px 8px 8px;
+        border-radius: 9999px;
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(0, 104, 255, 0.4);
+        transition: all 0.3s ease;
+        font-family: sans-serif;
+    }
+
+    .zalo-btn:hover {
+        background-color: #0056D6;
+        box-shadow: 0 15px 30px rgba(0, 104, 255, 0.5);
+        transform: scale(1.05);
+    }
+
+    /* 아이콘을 감싸는 흰색 원 */
+    .zalo-icon-circle {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .zalo-icon-circle img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* 텍스트 영역 */
+    .zalo-text-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .zalo-tag {
+        font-size: 9px;
+        color: #dbeafe;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    .zalo-label {
+        font-size: 11px;
+        color: white;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+</style>
+
+<!-- 2. Zalo 구조 (HTML) -->
+<div class="zalo-floating-wrap">
+    <a href="zalo://conversation?phone=84963531040" 
+       id="zaloFloatingBtn"
+       target="_blank" 
+       class="zalo-btn">
+        <div class="zalo-icon-circle">
+            <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/icons8-zalo-480.png?raw=true" alt="Zalo">
+        </div>
+        <div class="zalo-text-box">
+            <span class="zalo-tag">Liên hệ ngay</span>
+            <span class="zalo-label">Tư vấn miễn phí qua Zalo</span>
+        </div>
+    </a>
+</div>
+
+<!-- 3. Zalo 로직 (JavaScript) - 무한 리다이렉트 방지 및 기기 분기 -->
+<script>
+    document.getElementById('zaloFloatingBtn').addEventListener('click', function(e) {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const phoneNumber = "84963531040";
+
+        if (!isMobile) {
+            // PC 환경: 잘로 웹 채팅창으로 연결 (리다이렉트 오류 방지)
+            e.preventDefault();
+            window.open("https://chat.zalo.me/?phone=" + phoneNumber, "_blank");
+        } 
+        // 모바일 환경: href에 설정된 zalo:// 딥링크가 앱을 바로 실행합니다.
+    });
+</script>
