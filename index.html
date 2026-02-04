@@ -13,7 +13,7 @@
     <!-- Microsoft Clarity Tracking Code -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            c[a]=c[a]||function(){(c[a].q=c[a].q[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "vaw4wd2lxk");
@@ -45,6 +45,7 @@
         :root { 
             --sbh-green: #2D5A27; 
             --sbh-bg: #F4F7F4; 
+            --zalo-blue: #0068FF;
         }
         body { 
             font-family: 'Poppins', sans-serif; 
@@ -97,16 +98,13 @@
         }
         .nav-link:hover::after { width: 100%; }
 
-        .zalo-floating-wrap {
+        /* QR Floating Animation */
+        .qr-floating-wrap {
             animation: float-up 3s ease-in-out infinite;
         }
         @keyframes float-up {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
-        }
-        .zalo-btn {
-            background: linear-gradient(135deg, #0068E0 0%, #004699 100%);
-            box-shadow: 0 10px 25px rgba(0, 104, 224, 0.3);
         }
 
         .seo-hidden {
@@ -307,17 +305,25 @@
         <p class="text-gray-300 text-[10px] uppercase tracking-widest">© 2025 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
     </footer>
 
-    <!-- Floating Zalo Contact Button -->
-    <div class="fixed bottom-6 right-6 z-[100] zalo-floating-wrap">
+    <!-- Floating QR Contact Button -->
+    <div class="fixed bottom-6 right-6 z-[100] qr-floating-wrap flex flex-col items-center gap-2">
+        <!-- Text Label above QR -->
+        <div class="bg-[#0068FF] px-4 py-2 rounded-xl shadow-lg border border-white/20 text-center">
+            <p class="text-[10px] text-blue-100 font-bold uppercase tracking-tighter leading-tight">Liên hệ ngay</p>
+            <p class="text-[11px] text-white font-bold whitespace-nowrap">Tư vấn miễn phí qua Zalo</p>
+        </div>
+        <!-- QR Container -->
         <a href="https://zalo.me/84963531040" 
            target="_blank" 
-           class="zalo-btn group flex items-center gap-3 pl-2 pr-6 py-2 rounded-full transition-all duration-300 hover:pr-8">
-            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:rotate-12 transition-transform">
-                <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/icons8-zalo-480.png?raw=true" alt="Zalo" class="w-8 h-8">
+           class="block w-24 h-24 md:w-32 md:h-32 bg-[#0068FF] p-2 rounded-2xl shadow-2xl border-2 border-white/30 hover:scale-105 transition-all duration-300 group overflow-hidden relative">
+            <div class="w-full h-full bg-white rounded-lg p-1">
+                <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/QR.png?raw=true" 
+                     alt="Zalo QR Code" 
+                     class="w-full h-full object-contain">
             </div>
-            <div class="flex flex-col">
-                <span class="text-[10px] text-blue-100 font-bold leading-tight uppercase tracking-tighter">Liên hệ ngay</span>
-                <span class="text-white text-xs font-bold whitespace-nowrap">Tư vấn miễn phí qua Zalo</span>
+            <!-- Decorative badge -->
+            <div class="absolute -bottom-1 -right-1 bg-white text-[#0068FF] w-8 h-8 rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform border-2 border-[#0068FF]">
+                <i class="fa-solid fa-comment text-xs"></i>
             </div>
         </a>
     </div>
