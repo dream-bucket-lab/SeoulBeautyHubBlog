@@ -277,18 +277,21 @@
         </div>
     </footer>
 
-    <!-- Fixed Floating Zalo Button -->
-    <a href="https://zalo.me/84963531040" target="_blank" class="fixed bottom-6 right-6 z-50 zalo-float group">
-        <div class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-2xl flex items-center gap-3 pr-6 transition-all duration-300">
-            <div class="bg-white/20 p-2 rounded-full">
-                <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+   
+    <!-- Floating Zalo Contact Button -->
+    <div class="fixed bottom-6 right-6 z-[100] zalo-floating-wrap">
+        <a href="zalo://conversation?phone=84963531040" 
+           target="_blank" 
+           class="zalo-btn group flex items-center gap-3 pl-2 pr-6 py-2 rounded-full transition-all duration-300 hover:pr-8">
+            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+                <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/icons8-zalo-480.png?raw=true" alt="Zalo" class="w-7 h-7">
             </div>
-            <div class="flex flex-col items-start">
-                <span class="text-[10px] font-medium opacity-90 uppercase tracking-wider">Liên hệ ngay</span>
-                <span class="text-sm font-bold">Tư vấn Zalo</span>
+            <div class="flex flex-col">
+                <span class="text-[9px] text-blue-100 font-bold leading-tight uppercase">Liên hệ ngay</span>
+                <span class="text-white text-[11px] font-bold whitespace-nowrap">Tư vấn miễn phí qua Zalo</span>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 
     <script>
         // Check if lucide is defined before running to prevent crash
