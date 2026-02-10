@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tại sao nên chọn Dove Clinic tại Gangnam? | Seoul Beauty Hub</title>
     
-    <!-- SEO Meta Tags: Tối ưu hóa tìm kiếm cho thị trường Việt Nam -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Khám phá phòng khám da liễu Hàn Quốc uy tín tại Seoul & Gangnam. Chuyên điều trị nám tàn nhang, trị mụn tận gốc và tiêm Rejuran Healer chuẩn Hàn cho người Việt.">
     <meta name="keywords" content="phòng khám da liễu Hàn Quốc, thẩm mỹ viện Hàn Quốc, tiêm Rejuran Healer Gangnam, điều trị nám tàn nhang, skincare chuẩn Hàn, trị mụn tận gốc, Seoul Beauty Hub">
     <meta name="author" content="Seoul Beauty Hub">
@@ -22,6 +22,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -97,11 +98,34 @@
             padding: 1rem;
             text-align: center;
         }
+
+        /* Lightbox Overlay Animation */
+        #imageLightbox {
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        #lightboxImg {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #imageLightbox.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #imageLightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        #imageLightbox.active #lightboxImg {
+            transform: scale(1);
+        }
+        #imageLightbox.hidden #lightboxImg {
+            transform: scale(0.8);
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 leading-relaxed">
 
-    <!-- SEO Optimized Content -->
+    <!-- SEO Optimized Content (Hidden) -->
     <div class="seo-hidden">
         <h2>Phòng khám da liễu tại Gangnam uy tín nhất cho người Việt tại Hàn</h2>
         <p>Tìm hiểu cách trị mụn tận gốc Hàn Quốc và bảng giá dịch vụ thẩm mỹ viện 2026. Skincare chuẩn Hàn tại Seoul.</p>
@@ -124,7 +148,8 @@
         <div class="w-full bg-slate-100 relative border-b border-gray-50">
             <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/whydoveclinic/Gemini_Generated_Image_rty5xqrty5xqrty5.png?raw=true" 
                  alt="Dove Clinic Gangnam" 
-                 class="w-full h-auto block">
+                 class="w-full h-auto block cursor-zoom-in"
+                 onclick="openImageModal(this.src)">
             <div class="absolute inset-0 bg-black/5 pointer-events-none"></div>
         </div>
 
@@ -140,7 +165,7 @@
 
             <section class="space-y-8 mb-16">
                 <p>
-                    Chắc hẳn quý khách vừa hào hứng khi bước lên chuyến bay đến Hàn Quốc để trải nghiệm K-Beauty, nhưng cũng có không ít nỗi lo. Trên mạng có quá nhiều thông tin, và ở bir nơi xa lạ, ngôn ngữ bất đồng, việc lo lắng rằng <span class="italic text-indigo-600">"Liệu họ có thực sự tận tâm với mình không?"</span> là điều hoàn toàn dễ hiểu.
+                    Chắc hẳn quý khách vừa hào hứng khi bước lên chuyến bay đến Hàn Quốc để trải nghiệm K-Beauty, nhưng cũng có không ít nỗi lo. Trên mạng có quá nhiều thông tin, và ở một nơi xa lạ, ngôn ngữ bất đồng, việc lo lắng rằng <span class="italic text-indigo-600">"Liệu họ có thực sự tận tâm với mình không?"</span> là điều hoàn toàn dễ hiểu.
                 </p>
 
                 <p class="font-semibold text-xl border-l-4 border-indigo-500 pl-4">
@@ -154,14 +179,15 @@
                         Tại Hàn Quốc có vô số phòng khám da liễu lớn. Tuy nhiên, đáng tiếc là nhiều nơi hoạt động theo mô hình "nhà máy", nơi khách hàng quyết định liệu trình và thanh toán với nhân viên tư vấn trước khi gặp bác sĩ.
                     </p>
                     <p>
-                        <strong>Dove Clinic thì khác.</strong> Chúng tôi kiên định với nguyên tắc <strong>'Viện trưởng đại diện trực tiếp chẩn đoán và điều trị'</strong>. Đặc điểm làn da của khách hàng Việt Nam có thể khác with người Hàn Quốc. Do đó, không thể áp dụng máy móc, mà đội ngũ y bác sĩ giàu kinh nghiệm phải trực tiếp xem xét và lập kế hoạch 1:1 phù hợp nhất.
+                        <strong>Dove Clinic thì khác.</strong> Chúng tôi kiên định with nguyên tắc <strong>'Viện trưởng đại diện trực tiếp chẩn đoán và điều trị'</strong>. Đặc điểm làn da của khách hàng Việt Nam có thể khác với người Hàn Quốc. Do đó, không thể áp dụng máy móc, mà đội ngũ y bác sĩ giàu kinh nghiệm phải trực tiếp xem xét và lập kế hoạch 1:1 phù hợp nhất.
                     </p>
                 </div>
                 
                 <div class="my-8">
                     <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/doctors/explain1.png?raw=true" 
                          alt="Bác sĩ Dove Clinic tư vấn trực tiếp cho khách hàng" 
-                         class="w-full h-auto rounded-xl shadow-md border border-slate-100">
+                         class="w-full h-auto rounded-xl shadow-md border border-slate-100 cursor-zoom-in"
+                         onclick="openImageModal(this.src)">
                 </div>
                 
                 <!-- Point 2 -->
@@ -185,15 +211,16 @@
                 
                 <div class="my-8">
                     <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/titanum/image010.gif?raw=true" 
-                         alt="Titanium Lifting Procedure" 
-                         class="w-full h-auto rounded-xl shadow-md border border-slate-100">
+                         alt="Quy trình nâng cơ Titanium" 
+                         class="w-full h-auto rounded-xl shadow-md border border-slate-100 cursor-zoom-in"
+                         onclick="openImageModal(this.src)">
                 </div>
                 
                 <!-- Point 3 -->
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">3. Không xem khách hàng là người qua đường, chúng tôi điều trị với tâm thế người nhà</h2>
                     <p>
-                        Chúng tôi hiểu rõ quý khách lo lắng thế nào khi làm đẹp ở một đất nước xa lạ. Toàn thể nhân viên Dove Clinic không coi quý khách chỉ là "khách du lịch nước ngoài". Chúng tôi chăm sóc và quan tâm tỉ mỉ từng bước trong quá trình điều trị với tâm thế như đang điều trị cho chính người thân của mình.
+                        Chúng tôi hiểu rõ quý khách lo lắng thế nào khi làm đẹp ở một đất nước xa lạ. Toàn thể nhân viên Dove Clinic không coi quý khách chỉ là "khách du lịch nước ngoài". Chúng tôi chăm sóc và quan tâm tỉ mỉ từng bước trong quá trình điều trị with tâm thế như đang điều trị cho chính người thân của mình.
                     </p>
                 </div>
             </section>
@@ -206,8 +233,9 @@
                 </header>
                 
                 <main class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 px-4">
+                    <!-- Dịch vụ 1 -->
                     <div class="image-container text-center group">
-                        <div class="img-wrapper aspect-[4/5]" onclick="openModal('https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet5.png?raw=true')">
+                        <div class="img-wrapper aspect-[4/5]" onclick="openImageModal('https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet5.png?raw=true')">
                             <div class="loading-spinner"></div>
                             <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet5.png?raw=true" 
                                  alt="Khuyến mãi 01" 
@@ -217,11 +245,12 @@
                                 <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 1</p>
                             </div>
                         </div>
-                        <h3 class="mt-4 font-bold text-[#1A1A1B] text-lg group-hover:text-brand transition-colors text-center">Dịch vụ 01</h3>
+                        <h3 class="mt-4 font-bold text-[#1A1A1B] text-lg group-hover:text-brand transition-colors text-center">Gói Da Sáng Khỏe</h3>
                     </div>
 
+                    <!-- Dịch vụ 2 -->
                     <div class="image-container text-center group">
-                        <div class="img-wrapper aspect-[4/5]" onclick="openModal('https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet6.png?raw=true')">
+                        <div class="img-wrapper aspect-[4/5]" onclick="openImageModal('https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet6.png?raw=true')">
                             <div class="loading-spinner"></div>
                             <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet6.png?raw=true" 
                                  alt="Khuyến mãi 02" 
@@ -231,11 +260,12 @@
                                 <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 2</p>
                             </div>
                         </div>
-                        <h3 class="mt-4 font-bold text-[#1A1A1B] text-lg group-hover:text-brand transition-colors text-center">Dịch vụ 02</h3>
+                        <h3 class="mt-4 font-bold text-[#1A1A1B] text-lg group-hover:text-brand transition-colors text-center">Gói Nâng Cơ Toàn Diện</h3>
                     </div>
 
+                    <!-- Dịch vụ 3 -->
                     <div class="image-container text-center group">
-                        <div class="img-wrapper aspect-[4/5]" onclick="openModal('https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet7.png?raw=true')">
+                        <div class="img-wrapper aspect-[4/5]" onclick="openImageModal('https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet7.png?raw=true')">
                             <div class="loading-spinner"></div>
                             <img src="https://github.com/dream-bucket-lab/SeoulBeautyHubBlog/blob/master/assets/FebEvents/korviet7.png?raw=true" 
                                  alt="Khuyến mãi 03" 
@@ -245,7 +275,7 @@
                                 <p class="font-bold text-[#2D5A27]">Lỗi tải ảnh 3</p>
                             </div>
                         </div>
-                        <h3 class="mt-4 font-bold text-[#1A1A1B] text-lg group-hover:text-brand transition-colors text-center">Dịch vụ 03</h3>
+                        <h3 class="mt-4 font-bold text-[#1A1A1B] text-lg group-hover:text-brand transition-colors text-center">Gói Tái Tạo Da Chuyên Sâu</h3>
                     </div>
                 </main>
 
@@ -257,6 +287,21 @@
             </section>
         </div>
     </article>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightbox" class="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 hidden cursor-zoom-out" onclick="closeImageModal()">
+        <div class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
+            <img id="lightboxImg" src="" alt="Enlarged view" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain">
+            <button class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300 transition-colors" onclick="closeImageModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer / Copyright Area -->
+    <footer class="max-w-3xl mx-auto py-12 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 Seoul Beauty Hub. Mọi quyền được bảo lưu.</p>
+    </footer>
 
     <!-- Zalo Floating Button -->
     <div class="fixed bottom-6 right-6 z-[100] zalo-floating-wrap">
@@ -275,33 +320,63 @@
     </div>
 
     <script>
+        // Xử lý hiện ảnh sau khi tải xong
         function handleImageLoad(img) {
             const wrapper = img.parentElement;
-            wrapper.querySelector('.loading-spinner').style.display = 'none';
+            const spinner = wrapper.querySelector('.loading-spinner');
+            if (spinner) spinner.style.display = 'none';
             img.style.display = 'block';
         }
 
+        // Xử lý khi ảnh bị lỗi tải
         function handleImageError(img) {
             const wrapper = img.parentElement;
-            wrapper.querySelector('.loading-spinner').style.display = 'none';
-            wrapper.querySelector('.img-error').style.display = 'flex';
+            const spinner = wrapper.querySelector('.loading-spinner');
+            if (spinner) spinner.style.display = 'none';
+            const error = wrapper.querySelector('.img-error');
+            if (error) error.style.display = 'flex';
         }
 
-        function openModal(url) {
-            window.open(url, '_blank');
+        /* --- Image Lightbox Functions --- */
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openImageModal(url) {
+            if (!url) return;
+            lightboxImg.src = url;
+            lightbox.classList.remove('hidden');
+            // Force reflow for animation
+            void lightbox.offsetWidth;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Scroll lock
         }
 
-        // Zalo logic: Handle device-specific redirection
+        function closeImageModal() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxImg.src = "";
+                document.body.style.overflow = ''; // Restore scroll
+            }, 300);
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
+
+        // Logic Zalo: Tự động chuyển đổi link theo thiết bị
         document.getElementById('zaloFloatingBtn').addEventListener('click', function(e) {
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             const phoneNumber = "84963531040";
 
             if (!isMobile) {
-                // PC Environment: Connect via Zalo Web Chat
+                // Trên PC: Sử dụng Zalo Web Chat
                 e.preventDefault();
                 window.open("https://chat.zalo.me/?phone=" + phoneNumber, "_blank");
             } 
-            // Mobile Environment: Default link triggers app deep link
         });
     </script>
 </body>
